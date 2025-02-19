@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento ao Paciente</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/atendimentoPaciente.css">
+</head>
+
+<body>
+    <section class="session-prontuario">
+        <div class="container mt-5">
+            <h4 class="text-center">Dados do Paciente</h4>
+            <form id="paciente-form">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome completo">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="documento">Documento</label>
+                        <input type="text" class="form-control" id="documento" placeholder="Documento">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="urgencia">Urgência</label>
+                        <input type="text" class="form-control" id="urgencia" placeholder="Urgência">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="naturalidade">Naturalidade</label>
+                        <input type="text" class="form-control" id="naturalidade" placeholder="Naturalidade">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="nacionalidade">Nacionalidade</label>
+                        <input type="text" class="form-control" id="nacionalidade" placeholder="Nacionalidade">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="responsavel">Responsável</label>
+                        <input type="text" class="form-control" id="responsavel" placeholder="Responsável">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="carteirinha">Número da carteirinha</label>
+                        <input type="text" class="form-control" id="carteirinha" placeholder="Número da carteirinha">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="dataNascimento">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="sexo">Sexo</label>
+                        <select class="form-control" id="sexo">
+                            <option>Selecione uma opção</option>
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="cep">CEP</label>
+                        <input type="text" class="form-control" id="cep" placeholder="CEP">
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="rua">Rua</label>
+                        <input type="text" class="form-control" id="rua" placeholder="Rua">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="numero">Número</label>
+                        <input type="text" class="form-control" id="numero" placeholder="Número">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" placeholder="Cidade">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="estado">Estado / UF</label>
+                        <select class="form-control" id="estado">
+                            <option>Selecione uma opção</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" placeholder="Telefone" required>
+                    </div> 
+                </div>
+        </div>
+    </section>
+    <section class="session-prontuario">
+        <div class="container mt-5">
+            <h4 class="text-center">Prontuário</h4>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="temp">Temperatura Corporal</label>
+                        <input type="text" class="form-control" id="temp" placeholder="Temperatura">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="pressao">Pressão Arterial</label>
+                        <input type="text" class="form-control" id="pressao" placeholder="Pressão Arterial">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="oxigenacao">Oxigenação</label>
+                        <input type="text" class="form-control" id="oxigenacao" placeholder="Oxigenação">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="peso">Peso (Kg)</label>
+                        <input type="text" class="form-control" id="peso" placeholder="Peso (Kg)">
+                    </div>
+                </div>
+    
+                
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="medicamentos">Uso de medicamentos</label>
+                    <select class="form-control" id="medicamentos">
+                        <option>Selecione uma opção</option>
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                    
+                    <div id="descricao-medicamentos-group" style="display: none;">
+                        <label for="descricao-medicamentos">Descrição dos Medicamentos</label>
+                        <textarea class="form-control" id="descricao-medicamentos" rows="4" placeholder="Descreva aqui os medicamentos em uso"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="alergias">Alergias</label>
+                    <select class="form-control" id="alergias">
+                        <option>Selecione uma opção</option>
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                    
+                    <div id="descricao-alergias-group" style="display: none;">
+                        <label for="descricao-alergias">Descrição das Alergias</label>
+                        <textarea class="form-control" id="descricao-alergias" rows="4" placeholder="Descreva aqui as alergias, se houver"></textarea>
+                    </div>
+                </div>
+            </div>
+    
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="sintomas">Sintomas</label>
+                        <textarea class="form-control" id="sintomas" rows="4" placeholder="Descreva aqui todos os sintomas"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="session-prontuario">
+        <div class="container mt-5">
+            <h4>Requisições</h4>
+            <div id="requisicoes">
+                <!-- Campo de requisição inicial -->
+                <div class="form-group requisicao-group">
+                    <textarea class="form-control requisicao" rows="2" placeholder="Descreva a requisição"></textarea>
+                </div>
+            </div>
+            <!-- Botão para adicionar nova requisição -->
+            <button type="button" class="btn btn-secondary" id="adicionar-requisicao">
+                + Adicionar Requisição
+            </button>
+    
+            <h4 class="mt-5">Prescrições</h4>
+            <div class="form-group">
+                <textarea class="form-control prescricoes" id="prescricoes" rows="4" placeholder="Descreva as prescrições"></textarea>
+            </div>
+    
+            <h4 class="mt-5">Diagnóstico</h4>
+            <div class="form-group">
+                <textarea class="form-control diagnostico" id="diagnostico" rows="4" placeholder="Descreva o diagnóstico"></textarea>
+            </div>
+        </div>
+    </section>
+    <section class="d-flex justify-content-end mt-3">
+        <button type="submit" class="btn btn-primary btn-salvar">Salvar e encerrar o atendimento</button>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <script src="/js/atendimentoPaciente.js"></script>
+</body>
+
+</html>

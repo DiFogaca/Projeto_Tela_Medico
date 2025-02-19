@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #5f788a;
+    padding: 20px; /* Adiciona um padding ao body para evitar que o conteúdo fique colado nas bordas */
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Adiciona um padding interno ao container */
+}
+
+.session-prontuario h4 {
+    background-color: #5a6268;
+    margin-bottom: 20px;
+    color: #fffefe;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar verticalmente o textarea */
+    width: 100%; /* Garante que o textarea ocupe toda a largura disponível */
+    padding: 10px; /* Adiciona um padding interno ao textarea */
+    border: 1px solid #ccc; /* Borda sutil */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Estilo para o botão de adicionar requisição */
+#adicionar-requisicao {
+    margin-top: 10px;
+    background-color: #6c757d; /* Cor cinza do Bootstrap */
+    border: none;
+    color: #fff; /* Texto branco */
+    padding: 10px 20px; /* Padding interno */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+#adicionar-requisicao:hover {
+    background-color: #5a6268; /* Cor cinza mais escura ao passar o mouse */
+}
+
+/* Espaçamento abaixo do textarea das requisições */
+.requisicao-group {
+    margin-bottom: 15px; /* Ajuste o valor conforme necessário */
+}
+
+/* Estilo para o botão de exclusão de requisição */
+.excluir-requisicao {
+    margin-bottom: 5px; /* Espaçamento abaixo do botão */
+    background-color: #dc3545; /* Cor vermelha do Bootstrap */
+    border: none;
+    color: #fff; /* Texto branco */
+    padding: 5px 10px; /* Padding interno */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+.excluir-requisicao:hover {
+    background-color: #c82333; /* Cor vermelha mais escura ao passar o mouse */
+}
+
+.btn-salvar {
+    background-color: #28a745; /* Verde do Bootstrap para ações positivas */
+    border: none;
+    padding: 10px 20px; /* Padding interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+    position: absolute;
+}
+
+.btn-salvar:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+}

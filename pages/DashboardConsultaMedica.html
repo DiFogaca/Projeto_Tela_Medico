@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Balala - Dashboard Médico</title>
+    <link href="/css/dashboardMed.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="container-fluid">
+            <button class="btn btn-success w-100" id="btnChamarPaciente">Chamar próximo paciente</button>
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <div class="doctor-info">
+                        <div class="info-box">Médicos Atendendo</div>
+                        <div class="info-content">
+                            <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Ícone Médico"
+                                width="40">
+                            <h3 id="medicosAtendendo">--</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="my-0 p-3 bg-light rounded info-container">
+                        <h5 id="pacienteNome">Nome do Paciente</h5>
+                        <p id="pacientePrioridade"><strong>Prioridade - Entrada:</strong> --:--</p>
+
+                        <p id="pacienteDados">
+                            <strong>DN:</strong> -- | <strong>Sexo:</strong> -- |
+                            <strong>Nacionalidade:</strong> -- | <strong>Naturalidade:</strong> --
+                        </p>
+                        <p id="pacienteClinicos">
+                            <strong>Temp Corp:</strong> -- | <strong>Pressão Arterial:</strong> -- |
+                            <strong>Oxigenação:</strong> -- | <strong>Peso:</strong> --Kg
+                        </p>
+                        <p id="pacienteAlergias"><strong>Alergias:</strong> --</p>
+                        <p id="pacienteMedicamentos"><strong>Medicamentos:</strong> --</p>
+
+                        <div class="text-end"><button class="btn btn-primary" onclick="irParaAtendimento()">Iniciar
+                                atendimento</button></div>
+                    </div>
+                </div>
+            </div>
+            <h5 class="mt-4">Fila de Atendimento</h5>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+                <div class="queue-box" id="fila-0">
+                    <div class="display-4" id="fila-numero-0">--</div>
+                    <div class="time" id="fila-espera-0">Espera --:--:--</div>
+                    <div class="status">Não Urgente</div>
+                </div>
+                <div class="queue-box" id="fila-1" style="border-color: #28a745; color: #28a745;">
+                    <div class="display-4" id="fila-numero-1">--</div>
+                    <div class="time" id="fila-espera-1">Espera --:--:--</div>
+                    <div class="status" style="background-color: #28a745;">Pouca Urgência</div>
+                </div>
+                <div class="queue-box" id="fila-2" style="border-color: #ffc107; color: #ffc107;">
+                    <div class="display-4" id="fila-numero-2">--</div>
+                    <div class="time" id="fila-espera-2">Espera --:--:--</div>
+                    <div class="status" style="background-color: #ffc107;">Urgente</div>
+                </div>
+                <div class="queue-box" id="fila-3" style="border-color: #fd7a00; color: #ff7f07;">
+                    <div class="display-4" id="fila-numero-3">--</div>
+                    <div class="time" id="fila-espera-3">Espera --:--:--</div>
+                    <div class="status" style="background-color: #ff7707b4;">Muito Urgente</div>
+                </div>
+                <div class="queue-box" id="fila-4" style="border-color: #dc3545; color: #dc3545;">
+                    <div class="display-4" id="fila-numero-4">--</div>
+                    <div class="time" id="fila-espera-4">Espera --:--:--</div>
+                    <div class="status" style="background-color: #dc3545;">Emergência</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/dashConsultaMed.js" defer></script>
+</body>
+
+</html>

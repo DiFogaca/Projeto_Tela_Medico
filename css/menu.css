@@ -1,0 +1,75 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #5f788a;
+}
+
+/* ===== MENU LATERAL ===== */
+nav {
+    background-color: #1c1c1c; /* Fundo do menu */
+    width: 250px;
+    min-height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    border-right: 3px solid #28a745;
+}
+
+nav h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background: #28a745;
+    color: #ffffff;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.flex-grow-1 {
+    margin-left: 250px; /* Para não sobrepor o menu */
+    padding: 20px;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background-color: #f8f9fa; /* Fundo cinza claro */
+    color: #000000; /* Texto preto */
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
