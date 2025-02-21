@@ -117,18 +117,45 @@ async function fetchData() {
 }
 
 
-
-
-
 function irParaAtendimento() {
   carregarPagina("AtendimentoPaciente-Medico", "Atendimento Paciente");
 }
 
-let fetchInterval = setInterval(fetchData, 5000); // Ajuste o tempo conforme necessário
 
-// Função para interromper o intervalo quando sair da página
-function pararFetchData() {
-    clearInterval(fetchInterval);
-    console.log("fetchData interrompido!");
+// Variável para o intervalo
+
+// Função para iniciar o intervalo de fetchData
+function iniciarFetchData() {
+    fetchInterval = setInterval(fetchData, 1000); // Ajuste o tempo conforme necessário
+    console.log("fetchData iniciado...");
 }
+
+// Função para interromper o intervalo quando necessário
+function pararFetchData() {
+    if (fetchInterval) {
+        clearInterval(fetchInterval);
+        fetchInterval = null;
+        console.log("fetchData interrompido!");
+    }
+}
+
+// Função de inicialização da página Dashboard
+function inicializarDashConsultaMed() {
+    console.log("Inicializando dashConsultaMed.js...");
+
+    // Verifica se a página de Dashboard está carregada
+    if (!document.getElementById("dashConsulta")) {
+        console.error("ERRO: Elementos do DOM ainda não carregaram.");
+        return;
+    }
+
+    // Inicia a busca de dados
+    iniciarFetchData();
+}
+
+// Adiciona o evento para quando o DOM estiver totalmente carregado
+document.addEventListener("DOMContentLoaded", inicializarDashConsultaMed);
+
+// Caso a página seja fechada ou alterada, interrompe o intervalo de fetchData
+window.addEventListener("beforeunload", pararFetchData);
 

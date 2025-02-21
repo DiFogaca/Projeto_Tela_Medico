@@ -61,13 +61,17 @@ function executarScriptsDinamicos(container) {
       newScript.onload = () => {
         console.log(`${oldScript.src} carregado com sucesso`);
 
-        // Executar a inicialização manualmente se for a página AtendimentoPaciente
-        if (oldScript.src.includes("atendimentoPaciente.js")) {
+        // Extrair o nome do arquivo e criar o nome da função dinamicamente
+        const scriptName = oldScript.src.split("/").pop().split(".")[0]; // Exemplo: 'fiveserver.js' -> 'fiveserver'
+        const initFunctionName = `inicializar${scriptName.charAt(0).toUpperCase() + scriptName.slice(1)}`; // 'inicializarFiveserver'
+
+        // Verificar se a função de inicialização existe e executá-la
+        if (typeof window[initFunctionName] === "function") {
           setTimeout(() => {
-            if (typeof inicializarAtendimentoPaciente === "function") {
-              inicializarAtendimentoPaciente();
-            }
+            window[initFunctionName]();  // Chama a função de inicialização correspondente
           }, 100);
+        } else {
+          console.warn(`Função de inicialização ${initFunctionName} não encontrada.`);
         }
       };
     } else {
@@ -77,5 +81,3 @@ function executarScriptsDinamicos(container) {
     document.body.appendChild(newScript);
   });
 }
-
-

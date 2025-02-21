@@ -236,21 +236,42 @@ if (requisicaoInicial) {
 
 function inicializarAtendimentoPaciente() {
     console.log("Inicializando atendimentoPaciente.js...");
-  
+
     if (!document.getElementById("paciente-form")) {
         console.error("ERRO: Elementos do DOM ainda não carregaram.");
         return;
     }
-  
+
     popularEstados();
     preencherDadosPaciente();
     preencherDadosProntuario();
-  
-    document.getElementById("paciente-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-        alert("Formulário enviado com sucesso!");
-    });
-  }
-  
-  // Se a página for carregada normalmente, a função será executada pelo evento DOMContentLoaded
-  document.addEventListener("DOMContentLoaded", inicializarAtendimentoPaciente);
+}
+
+// Se a página for carregada normalmente, a função será executada pelo evento DOMContentLoaded
+document.addEventListener("DOMContentLoaded", inicializarAtendimentoPaciente);
+
+// Função para abrir o modal de confirmação
+document.querySelector(".btn-salvar").addEventListener("click", function (event) {
+    event.preventDefault(); // Previne o comportamento padrão do botão de submit
+    const modal = new bootstrap.Modal(document.getElementById('confirmarSalvarModal'));
+    modal.show();
+});
+
+// Função de confirmação de salvar e redirecionamento
+document.getElementById("confirmarSalvarBtn").addEventListener("click", function () {
+    // Chama a função para salvar o atendimento
+    salvarAtendimento();
+
+    // Fecha o modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('confirmarSalvarModal'));
+    modal.hide();
+
+    // Redireciona para o dashboardMed
+    carregarPagina("DashboardConsultaMedica", "Dashboard Médico");
+});
+
+// Função de salvar o atendimento (exemplo de lógica)
+function salvarAtendimento() {
+    console.log("Atendimento salvo com sucesso!");
+    // Adicione a lógica de salvar os dados do atendimento aqui
+}
