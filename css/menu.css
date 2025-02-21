@@ -11,6 +11,10 @@ body {
     background-color: #5f788a;
 }
 
+th {
+    text-align: -webkit-match-parent;
+}
+
 /* ===== MENU LATERAL ===== */
 nav {
     background-color: #1c1c1c; /* Fundo do menu */

@@ -116,13 +116,19 @@ async function fetchData() {
   }
 }
 
-// Chama a função ao carregar a página e define um intervalo para atualizar os dados a cada 5 segundos
-fetchData();
-setInterval(fetchData, 5000);
+
 
 
 
 function irParaAtendimento() {
   carregarPagina("AtendimentoPaciente-Medico", "Atendimento Paciente");
+}
+
+let fetchInterval = setInterval(fetchData, 5000); // Ajuste o tempo conforme necessário
+
+// Função para interromper o intervalo quando sair da página
+function pararFetchData() {
+    clearInterval(fetchInterval);
+    console.log("fetchData interrompido!");
 }
 

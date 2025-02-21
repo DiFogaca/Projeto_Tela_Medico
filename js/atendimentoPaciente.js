@@ -234,9 +234,23 @@ if (requisicaoInicial) {
     }
 }
 
-// Executa funções quando o DOM estiver carregado
-document.addEventListener("DOMContentLoaded", () => {
+function inicializarAtendimentoPaciente() {
+    console.log("Inicializando atendimentoPaciente.js...");
+  
+    if (!document.getElementById("paciente-form")) {
+        console.error("ERRO: Elementos do DOM ainda não carregaram.");
+        return;
+    }
+  
     popularEstados();
     preencherDadosPaciente();
     preencherDadosProntuario();
-});
+  
+    document.getElementById("paciente-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Formulário enviado com sucesso!");
+    });
+  }
+  
+  // Se a página for carregada normalmente, a função será executada pelo evento DOMContentLoaded
+  document.addEventListener("DOMContentLoaded", inicializarAtendimentoPaciente);

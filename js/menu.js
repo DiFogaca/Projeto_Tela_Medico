@@ -17,7 +17,7 @@ function atualizarDataHora() {
 setInterval(atualizarDataHora, 1000);
 atualizarDataHora();
 
-// === FUNÇÃO GERAL PARA CARREGAMENTO DINÂMICO ===
+// === FUNÇÃO PARA CARREGAR PÁGINAS DINÂMICAS E EXECUTAR O SCRIPT ===
 function carregarPagina(pagina, titulo = "") {
   const conteudo = document.getElementById("conteudo");
   const tituloPagina = document.getElementById("tituloPagina");
@@ -33,69 +33,49 @@ function carregarPagina(pagina, titulo = "") {
       return response.text();
     })
     .then((html) => {
+
+      if (typeof pararFetchData === "function") {
+        pararFetchData();
+    }
+      // Carrega o conteúdo da página
       conteudo.innerHTML = html;
       if (titulo) tituloPagina.textContent = titulo;
 
-      // Carregar arquivos CSS e JS específicos para a página carregada
-      carregarCss(pagina);
-      carregarScripts(pagina, conteudo);
+      // Executa os scripts específicos da página
+      executarScriptsDinamicos(conteudo);
     })
     .catch((error) => console.error("Erro ao carregar página:", error));
 }
 
-// === CARREGAR ARQUIVOS CSS ESPECÍFICOS PARA A PÁGINA ===
-function carregarCss(pagina) {
-  const cssMap = {
-    'DashboardConsultaMedica': './css/dashboardMed.css',
-    'AtendimentoPaciente-Medico': './css/atendimentoPaciente.css',
-    // Adicione outros arquivos CSS conforme necessário
-  };
-
-  const cssArquivo = cssMap[pagina];
-  if (cssArquivo) {
-    const linkExistente = document.querySelector(`link[href="${cssArquivo}"]`);
-    if (!linkExistente) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = cssArquivo;
-      document.head.appendChild(link);
-    }
-  }
-}
-
-// === CARREGAR E EXECUTAR OS SCRIPTS ESPECÍFICOS PARA A PÁGINA ===
-function carregarScripts(pagina, container) {
-  const jsMap = {
-    'DashboardConsultaMedica': './js/dashConsultaMed.js',
-    'AtendimentoPaciente-Medico': './js/atendimentoPaciente.js',
-    // Adicione outros arquivos JS conforme necessário
-  };
-
-  const jsArquivo = jsMap[pagina];
-  if (jsArquivo) {
-    const scriptExistente = document.querySelector(`script[src="${jsArquivo}"]`);
-    if (!scriptExistente) {
-      const script = document.createElement("script");
-      script.src = jsArquivo;
-      script.onload = () => executarScriptsDinamicos(container); // Executa scripts internos após carregar o JS
-      document.body.appendChild(script);
-    } else {
-      // Se o script já estiver carregado, apenas executar os scripts internos
-      executarScriptsDinamicos(container);
-    }
-  }
-}
-
-// === EXECUÇÃO DE SCRIPTS INTERNOS DAS PÁGINAS CARREGADAS ===
 function executarScriptsDinamicos(container) {
   container.querySelectorAll("script").forEach((oldScript) => {
+    let scriptExistente = document.querySelector(`script[src="${oldScript.src}"]`);
+    if (scriptExistente) {
+      scriptExistente.remove();
+    }
+
     const newScript = document.createElement("script");
+
     if (oldScript.src) {
       newScript.src = oldScript.src;
+      newScript.onload = () => {
+        console.log(`${oldScript.src} carregado com sucesso`);
+
+        // Executar a inicialização manualmente se for a página AtendimentoPaciente
+        if (oldScript.src.includes("atendimentoPaciente.js")) {
+          setTimeout(() => {
+            if (typeof inicializarAtendimentoPaciente === "function") {
+              inicializarAtendimentoPaciente();
+            }
+          }, 100);
+        }
+      };
     } else {
       newScript.textContent = oldScript.textContent;
     }
+
     document.body.appendChild(newScript);
-    oldScript.remove();
   });
 }
+
+
