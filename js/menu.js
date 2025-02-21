@@ -27,7 +27,7 @@ function carregarPagina(pagina, titulo = "") {
     return;
   }
 
-  fetch(`./pages/${pagina}`)
+  fetch(`./pages/${pagina}.html`)
     .then((response) => {
       if (!response.ok) throw new Error(`Erro ${response.status}: Página não encontrada`);
       return response.text();
@@ -35,9 +35,55 @@ function carregarPagina(pagina, titulo = "") {
     .then((html) => {
       conteudo.innerHTML = html;
       if (titulo) tituloPagina.textContent = titulo;
-      executarScriptsDinamicos(conteudo);
+
+      // Carregar arquivos CSS e JS específicos para a página carregada
+      carregarCss(pagina);
+      carregarScripts(pagina, conteudo);
     })
     .catch((error) => console.error("Erro ao carregar página:", error));
+}
+
+// === CARREGAR ARQUIVOS CSS ESPECÍFICOS PARA A PÁGINA ===
+function carregarCss(pagina) {
+  const cssMap = {
+    'DashboardConsultaMedica': './css/dashboardMed.css',
+    'AtendimentoPaciente-Medico': './css/atendimentoPaciente.css',
+    // Adicione outros arquivos CSS conforme necessário
+  };
+
+  const cssArquivo = cssMap[pagina];
+  if (cssArquivo) {
+    const linkExistente = document.querySelector(`link[href="${cssArquivo}"]`);
+    if (!linkExistente) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = cssArquivo;
+      document.head.appendChild(link);
+    }
+  }
+}
+
+// === CARREGAR E EXECUTAR OS SCRIPTS ESPECÍFICOS PARA A PÁGINA ===
+function carregarScripts(pagina, container) {
+  const jsMap = {
+    'DashboardConsultaMedica': './js/dashConsultaMed.js',
+    'AtendimentoPaciente-Medico': './js/atendimentoPaciente.js',
+    // Adicione outros arquivos JS conforme necessário
+  };
+
+  const jsArquivo = jsMap[pagina];
+  if (jsArquivo) {
+    const scriptExistente = document.querySelector(`script[src="${jsArquivo}"]`);
+    if (!scriptExistente) {
+      const script = document.createElement("script");
+      script.src = jsArquivo;
+      script.onload = () => executarScriptsDinamicos(container); // Executa scripts internos após carregar o JS
+      document.body.appendChild(script);
+    } else {
+      // Se o script já estiver carregado, apenas executar os scripts internos
+      executarScriptsDinamicos(container);
+    }
+  }
 }
 
 // === EXECUÇÃO DE SCRIPTS INTERNOS DAS PÁGINAS CARREGADAS ===
@@ -50,5 +96,6 @@ function executarScriptsDinamicos(container) {
       newScript.textContent = oldScript.textContent;
     }
     document.body.appendChild(newScript);
+    oldScript.remove();
   });
 }

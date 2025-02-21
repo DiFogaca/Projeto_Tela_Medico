@@ -1,4 +1,4 @@
-const data = {
+data = {
   medicosAtendendo: 2,
   paciente: {
     nome: "Teste Paciente",
@@ -45,7 +45,7 @@ const data = {
 };
 
 
-const prioridadeConfig = {
+prioridadeConfig = {
   "não urgente": { texto: "Não Urgente", cor: "#007bff" }, // Azul
   "pouco urgente": { texto: "Pouca Urgência", cor: "#28a745" }, // Verde
   "urgente": { texto: "Urgente", cor: "#ffc107" }, // Amarelo
@@ -123,6 +123,6 @@ setInterval(fetchData, 5000);
 
 
 function irParaAtendimento() {
-  carregarPagina("AtendimentoPaciente-Medico.html", "Atendimento Paciente");
+  carregarPagina("AtendimentoPaciente-Medico", "Atendimento Paciente");
 }
 

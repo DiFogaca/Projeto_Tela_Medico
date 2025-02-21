@@ -7,7 +7,7 @@
     <title>Atendimento ao Paciente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../css/atendimentoPaciente.css">
+    <link rel="stylesheet" href="/css/atendimentoPaciente.css">
 </head>
 
 <body>
@@ -18,43 +18,43 @@
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="nome" class="form-label">Nome completo</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome completo">
+                        <input type="text" class="form-control" id="nome" placeholder="Nome completo" disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="documento" class="form-label">Documento</label>
-                        <input type="text" class="form-control" id="documento" placeholder="Documento">
+                        <input type="text" class="form-control" id="documento" placeholder="Documento" disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="urgencia" class="form-label">Urgência</label>
-                        <input type="text" class="form-control" id="urgencia" placeholder="Urgência">
+                        <input type="text" class="form-control" id="urgencia" placeholder="Urgência" disabled>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="naturalidade" class="form-label">Naturalidade</label>
-                        <input type="text" class="form-control" id="naturalidade" placeholder="Naturalidade">
+                        <input type="text" class="form-control" id="naturalidade" placeholder="Naturalidade" disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="nacionalidade" class="form-label">Nacionalidade</label>
-                        <input type="text" class="form-control" id="nacionalidade" placeholder="Nacionalidade">
+                        <input type="text" class="form-control" id="nacionalidade" placeholder="Nacionalidade" disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="responsavel" class="form-label">Responsável</label>
-                        <input type="text" class="form-control" id="responsavel" placeholder="Responsável">
+                        <input type="text" class="form-control" id="responsavel" placeholder="Responsável" disabled>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="carteirinha" class="form-label">Número da carteirinha</label>
-                        <input type="text" class="form-control" id="carteirinha" placeholder="Número da carteirinha">
+                        <input type="text" class="form-control" id="carteirinha" placeholder="Número da carteirinha" disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                        <input type="date" class="form-control" id="dataNascimento">
+                        <input type="date" class="form-control" id="dataNascimento" disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="sexo" class="form-label">Sexo</label>
-                        <select class="form-select" id="sexo">
+                        <select class="form-select" id="sexo" disabled>
                             <option selected>Selecione uma opção</option>
                             <option>Masculino</option>
                             <option>Feminino</option>
@@ -65,29 +65,29 @@
                 <div class="row">
                     <div class="col-md-2 mb-3">
                         <label for="cep" class="form-label">CEP</label>
-                        <input type="text" class="form-control" id="cep" placeholder="CEP">
+                        <input type="text" class="form-control" id="cep" placeholder="CEP" disabled>
                     </div>
                     <div class="col-md-8 mb-3">
                         <label for="rua" class="form-label">Rua</label>
-                        <input type="text" class="form-control" id="rua" placeholder="Rua">
+                        <input type="text" class="form-control" id="rua" placeholder="Rua" disabled>
                     </div>
                     <div class="col-md-2 mb-3">
                         <label for="numero" class="form-label">Número</label>
-                        <input type="text" class="form-control" id="numero" placeholder="Número">
+                        <input type="text" class="form-control" id="numero" placeholder="Número" disabled>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                        <input type="text" class="form-control" id="bairro" placeholder="Bairro" disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="cidade">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" placeholder="Cidade">
+                        <input type="text" class="form-control" id="cidade" placeholder="Cidade" disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="estado">Estado / UF</label>
-                        <select class="form-control" id="estado">
+                        <select class="form-control" id="estado" disabled>
                             <option>Selecione uma opção</option>
                         </select>
                     </div>
@@ -95,12 +95,15 @@
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label for="email" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail" required disabled>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="telefone" class="form-label">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" placeholder="Telefone" required>
+                        <input type="text" class="form-control" id="telefone" placeholder="Telefone" required disabled>
                     </div> 
+                </div>
+                <div id="editar-paciente">
+                    <button type="button" class="btn btn-warning" id="btn-editar">Editar</button>
                 </div>
             </form>
         </div>
@@ -198,10 +201,6 @@
     <section class="d-flex justify-content-end mt-3">
         <button type="submit" class="btn btn-primary btn-salvar">Salvar e encerrar o atendimento</button>
     </section>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="/js/atendimentoPaciente.js"></script>
 </body>
 
