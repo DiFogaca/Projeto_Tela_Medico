@@ -1,16 +1,21 @@
 // === ATUALIZAÇÃO DE DATA E HORA ===
 function atualizarDataHora() {
   const agora = new Date();
-  const formato = {
-      weekday: 'long', 
+  const formatoData = {
       day: '2-digit', 
-      month: 'long', 
+      month: '2-digit', 
       year: 'numeric',
-      hour: '2-digit', 
-      minute: '2-digit', 
-      second: '2-digit'
-  };
-  document.getElementById("dataHoraAtual").textContent = agora.toLocaleDateString('pt-BR', formato);
+  }
+  const formatoTempo = {
+    hour: '2-digit', 
+    minute: '2-digit', 
+    second: '2-digit'
+  }
+  const dataAtual = document.getElementById('data_atual')
+  const horaAtual = document.getElementById('hora_atual')
+  
+  dataAtual.textContent = agora.toLocaleDateString('pt-BR', formatoData)
+  horaAtual.textContent = agora.toLocaleDateString('pt-BR', formatoTempo).split(',')[1]
 }
 
 // Atualiza a data e hora a cada segundo
@@ -20,9 +25,8 @@ atualizarDataHora();
 // === FUNÇÃO PARA CARREGAR PÁGINAS DINÂMICAS E EXECUTAR O SCRIPT ===
 function carregarPagina(pagina, titulo = "") {
   const conteudo = document.getElementById("conteudo");
-  const tituloPagina = document.getElementById("tituloPagina");
 
-  if (!conteudo || !tituloPagina) {
+  if (!conteudo ) {
     console.error("Elementos principais não encontrados.");
     return;
   }
@@ -39,7 +43,6 @@ function carregarPagina(pagina, titulo = "") {
     }
       // Carrega o conteúdo da página
       conteudo.innerHTML = html;
-      if (titulo) tituloPagina.textContent = titulo;
 
       // Executa os scripts específicos da página
       executarScriptsDinamicos(conteudo);

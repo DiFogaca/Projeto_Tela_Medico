@@ -9,215 +9,218 @@
 </head>
 
 <body>
-    <section class="session-prontuario">
-        <div class="container mt-5">
-            <h4 class="text-center">Dados do Paciente</h4>
-            <form id="paciente-form">
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label for="nome" class="form-label">Nome completo</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome completo" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="documento" class="form-label">Documento</label>
-                        <input type="text" class="form-control" id="documento" placeholder="Documento" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="urgencia" class="form-label">Urgência</label>
-                        <input type="text" class="form-control" id="urgencia" placeholder="Urgência" disabled>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label for="naturalidade" class="form-label">Naturalidade</label>
-                        <input type="text" class="form-control" id="naturalidade" placeholder="Naturalidade" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="nacionalidade" class="form-label">Nacionalidade</label>
-                        <input type="text" class="form-control" id="nacionalidade" placeholder="Nacionalidade" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="responsavel" class="form-label">Responsável</label>
-                        <input type="text" class="form-control" id="responsavel" placeholder="Responsável" disabled>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label for="carteirinha" class="form-label">Número da carteirinha</label>
-                        <input type="text" class="form-control" id="carteirinha" placeholder="Número da carteirinha" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                        <input type="date" class="form-control" id="dataNascimento" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="sexo" class="form-label">Sexo</label>
-                        <select class="form-select" id="sexo" disabled>
-                            <option selected>Selecione uma opção</option>
-                            <option>Masculino</option>
-                            <option>Feminino</option>
-                            <option>Outro</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2 mb-3">
-                        <label for="cep" class="form-label">CEP</label>
-                        <input type="text" class="form-control" id="cep" placeholder="CEP" disabled>
-                    </div>
-                    <div class="col-md-8 mb-3">
-                        <label for="rua" class="form-label">Rua</label>
-                        <input type="text" class="form-control" id="rua" placeholder="Rua" disabled>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <label for="numero" class="form-label">Número</label>
-                        <input type="text" class="form-control" id="numero" placeholder="Número" disabled>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" placeholder="Bairro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="cidade">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" placeholder="Cidade" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="estado">Estado / UF</label>
-                        <select class="form-control" id="estado" disabled>
-                            <option>Selecione uma opção</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="E-mail" required disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="telefone" class="form-label">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" placeholder="Telefone" required disabled>
-                    </div> 
-                </div>
-                <div id="editar-paciente">
-                    <button type="button" class="btn btn-warning" id="btn-editar">Editar</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <section class="session-prontuario">
-        <div class="container mt-5">
-            <h4 class="text-center">Prontuário</h4>
-            <form>
-                <div class="row g-3">
-                    <div class="col-md-3">
-                        <label for="temp" class="form-label">Temperatura Corporal</label>
-                        <input type="text" class="form-control" id="temp" placeholder="Temperatura">
-                    </div>
-                    <div class="col-md-3">
-                        <label for="pressao" class="form-label">Pressão Arterial</label>
-                        <input type="text" class="form-control" id="pressao" placeholder="Pressão Arterial">
-                    </div>
-                    <div class="col-md-3">
-                        <label for="oxigenacao" class="form-label">Oxigenação</label>
-                        <input type="text" class="form-control" id="oxigenacao" placeholder="Oxigenação">
-                    </div>
-                    <div class="col-md-3">
-                        <label for="peso" class="form-label">Peso (Kg)</label>
-                        <input type="text" class="form-control" id="peso" placeholder="Peso (Kg)">
-                    </div>
-                </div>
-    
-                <div class="row g-3 mt-3">
-                    <div class="col-md-6">
-                        <label for="medicamentos" class="form-label">Uso de medicamentos</label>
-                        <select class="form-select" id="medicamentos">
-                            <option>Selecione uma opção</option>
-                            <option>Sim</option>
-                            <option>Não</option>
-                        </select>
-                        
-                        <div id="descricao-medicamentos-group" class="mt-2" style="display: none;">
-                            <label for="descricao-medicamentos" class="form-label">Descrição dos Medicamentos</label>
-                            <textarea class="form-control" id="descricao-medicamentos" rows="4" placeholder="Descreva aqui os medicamentos em uso"></textarea>
+    <div>
+        <section class="session-prontuario">
+            <div class="container mt-5">
+                <h4 class="text-center">Dados do Paciente</h4>
+                <form id="paciente-form">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="nome" class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Nome completo" disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="documento" class="form-label">Documento</label>
+                            <input type="text" class="form-control" id="documento" placeholder="Documento" disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="urgencia" class="form-label">Urgência</label>
+                            <input type="text" class="form-control" id="urgencia" placeholder="Urgência" disabled>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <label for="alergias" class="form-label">Alergias</label>
-                        <select class="form-select" id="alergias">
-                            <option>Selecione uma opção</option>
-                            <option>Sim</option>
-                            <option>Não</option>
-                        </select>
-                        
-                        <div id="descricao-alergias-group" class="mt-2" style="display: none;">
-                            <label for="descricao-alergias" class="form-label">Descrição das Alergias</label>
-                            <textarea class="form-control" id="descricao-alergias" rows="4" placeholder="Descreva aqui as alergias, se houver"></textarea>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="naturalidade" class="form-label">Naturalidade</label>
+                            <input type="text" class="form-control" id="naturalidade" placeholder="Naturalidade" disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="nacionalidade" class="form-label">Nacionalidade</label>
+                            <input type="text" class="form-control" id="nacionalidade" placeholder="Nacionalidade" disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="responsavel" class="form-label">Responsável</label>
+                            <input type="text" class="form-control" id="responsavel" placeholder="Responsável" disabled>
                         </div>
                     </div>
-                </div>
-    
-                <div class="row g-3 mt-3">
-                    <div class="col-md-12">
-                        <label for="sintomas" class="form-label">Sintomas</label>
-                        <textarea class="form-control" id="sintomas" rows="4" placeholder="Descreva aqui todos os sintomas"></textarea>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="carteirinha" class="form-label">Número da carteirinha</label>
+                            <input type="text" class="form-control" id="carteirinha" placeholder="Número da carteirinha" disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="dataNascimento" disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select class="form-select" id="sexo" disabled>
+                                <option selected>Selecione uma opção</option>
+                                <option>Masculino</option>
+                                <option>Feminino</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 mb-3">
+                            <label for="cep" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="cep" placeholder="CEP" disabled>
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <label for="rua" class="form-label">Rua</label>
+                            <input type="text" class="form-control" id="rua" placeholder="Rua" disabled>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="numero" class="form-label">Número</label>
+                            <input type="text" class="form-control" id="numero" placeholder="Número" disabled>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" class="form-control" id="bairro" placeholder="Bairro" disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" class="form-control" id="cidade" placeholder="Cidade" disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="estado">Estado / UF</label>
+                            <select class="form-control" id="estado" disabled>
+                                <option>Selecione uma opção</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="E-mail" required disabled>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="text" class="form-control" id="telefone" placeholder="Telefone" required disabled>
+                        </div> 
+                    </div>
+                    <div id="editar-paciente">
+                        <button type="button" class="btn btn-warning" id="btn-editar">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="session-prontuario">
+            <div class="container mt-5">
+                <h4 class="text-center">Prontuário</h4>
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label for="temp" class="form-label">Temperatura Corporal</label>
+                            <input type="text" class="form-control" id="temp" placeholder="Temperatura">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="pressao" class="form-label">Pressão Arterial</label>
+                            <input type="text" class="form-control" id="pressao" placeholder="Pressão Arterial">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="oxigenacao" class="form-label">Oxigenação</label>
+                            <input type="text" class="form-control" id="oxigenacao" placeholder="Oxigenação">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="peso" class="form-label">Peso (Kg)</label>
+                            <input type="text" class="form-control" id="peso" placeholder="Peso (Kg)">
+                        </div>
+                    </div>
+        
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-6">
+                            <label for="medicamentos" class="form-label">Uso de medicamentos</label>
+                            <select class="form-select" id="medicamentos">
+                                <option>Selecione uma opção</option>
+                                <option>Sim</option>
+                                <option>Não</option>
+                            </select>
+                            
+                            <div id="descricao-medicamentos-group" class="mt-2" style="display: none;">
+                                <label for="descricao-medicamentos" class="form-label">Descrição dos Medicamentos</label>
+                                <textarea class="form-control" id="descricao-medicamentos" rows="4" placeholder="Descreva aqui os medicamentos em uso"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="alergias" class="form-label">Alergias</label>
+                            <select class="form-select" id="alergias">
+                                <option>Selecione uma opção</option>
+                                <option>Sim</option>
+                                <option>Não</option>
+                            </select>
+                            
+                            <div id="descricao-alergias-group" class="mt-2" style="display: none;">
+                                <label for="descricao-alergias" class="form-label">Descrição das Alergias</label>
+                                <textarea class="form-control" id="descricao-alergias" rows="4" placeholder="Descreva aqui as alergias, se houver"></textarea>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-12">
+                            <label for="sintomas" class="form-label">Sintomas</label>
+                            <textarea class="form-control" id="sintomas" rows="4" placeholder="Descreva aqui todos os sintomas"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="session-prontuario">
+            <div class="container mt-5">
+                <h4>Requisições</h4>
+                <div id="requisicoes">
+                    <!-- Campo de requisição inicial -->
+                    <div class="mb-3 requisicao-group">
+                        <textarea class="form-control requisicao" rows="2" placeholder="Descreva a requisição"></textarea>
                     </div>
                 </div>
-            </form>
-        </div>
-    </section>
-    <section class="session-prontuario">
-        <div class="container mt-5">
-            <h4>Requisições</h4>
-            <div id="requisicoes">
-                <!-- Campo de requisição inicial -->
-                <div class="mb-3 requisicao-group">
-                    <textarea class="form-control requisicao" rows="2" placeholder="Descreva a requisição"></textarea>
+                <!-- Botão para adicionar nova requisição -->
+                <button type="button" class="btn btn-secondary" id="adicionar-requisicao">
+                    + Adicionar Requisição
+                </button>
+        
+                <h4 class="mt-5">Prescrições</h4>
+                <div class="mb-3">
+                    <label for="prescricoes" class="form-label">Descreva as prescrições</label>
+                    <textarea class="form-control prescricoes" id="prescricoes" rows="4"></textarea>
+                </div>
+        
+                <h4 class="mt-5">Diagnóstico</h4>
+                <div class="mb-3">
+                    <label for="diagnostico" class="form-label">Descreva o diagnóstico</label>
+                    <textarea class="form-control diagnostico" id="diagnostico" rows="4"></textarea>
                 </div>
             </div>
-            <!-- Botão para adicionar nova requisição -->
-            <button type="button" class="btn btn-secondary" id="adicionar-requisicao">
-                + Adicionar Requisição
-            </button>
-    
-            <h4 class="mt-5">Prescrições</h4>
-            <div class="mb-3">
-                <label for="prescricoes" class="form-label">Descreva as prescrições</label>
-                <textarea class="form-control prescricoes" id="prescricoes" rows="4"></textarea>
-            </div>
-    
-            <h4 class="mt-5">Diagnóstico</h4>
-            <div class="mb-3">
-                <label for="diagnostico" class="form-label">Descreva o diagnóstico</label>
-                <textarea class="form-control diagnostico" id="diagnostico" rows="4"></textarea>
-            </div>
-        </div>
-    </section>
-    
-    <section class="d-flex justify-content-end mt-3">
-        <button type="submit" class="btn btn-primary btn-salvar">Salvar e encerrar o atendimento</button>
-    </section>
+            
+        </section>
+        
+        <section class="d-flex mt-3 container mb-3">
+            <button type="submit" class="btn btn-primary btn-salvar">Salvar e encerrar o atendimento</button>
+        </section>
 
-    <!-- Modal de Confirmação -->
-<div class="modal fade" id="confirmarSalvarModal" tabindex="-1" aria-labelledby="confirmarSalvarModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmarSalvarModalLabel">Confirmar Salvar</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                Você tem certeza que deseja salvar e encerrar o atendimento?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" id="confirmarSalvarBtn">Confirmar</button>
+            <!-- Modal de Confirmação -->
+        <div class="modal fade" id="confirmarSalvarModal" tabindex="-1" aria-labelledby="confirmarSalvarModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmarSalvarModalLabel">Confirmar Salvar</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        Você tem certeza que deseja salvar e encerrar o atendimento?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" id="confirmarSalvarBtn">Confirmar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <script src="js/atendimentoPaciente.js"></script>
 </body>

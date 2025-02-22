@@ -6,9 +6,7 @@
 }
 
 body {
-    background-color: #5f788a;
-    padding: 20px; /* Adiciona um padding ao body para evitar que o conteúdo fique colado nas bordas */
-}
+    background-color: var(--primary);}
 
 .container {
     background-color: #fff;
@@ -75,14 +73,14 @@ textarea {
 }
 
 .btn-salvar {
-    background-color: #28a745; /* Verde do Bootstrap para ações positivas */
+    background-color: var(--green);
     border: none;
     padding: 10px 20px; /* Padding interno */
     font-size: 16px; /* Tamanho da fonte */
     border-radius: 4px; /* Bordas arredondadas */
     cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
     transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
-    position: absolute;
+
 }
 
 .btn-salvar:hover {

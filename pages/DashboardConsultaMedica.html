@@ -12,9 +12,9 @@
 <body>
     <div class="container mt-4">
         <div class="container-fluid">
-            <button class="btn btn-success w-100" id="btnChamarPaciente">Chamar próximo paciente</button>
             <div class="row mt-3">
                 <div class="col-md-3">
+                    <button class="btn btn-success w-100 mb-3" id="btnChamarPaciente">Chamar próximo paciente</button>
                     <div class="doctor-info">
                         <div class="info-box">Médicos Atendendo</div>
                         <div class="info-content">
@@ -49,29 +49,55 @@
             <div class="d-flex justify-content-center gap-3 flex-wrap">
 
                 <div class="queue-box" id="fila-0">
-                    <div class="display-4" id="fila-numero-0">--</div>
-                    <div class="time" id="fila-espera-0">Espera --:--:--</div>
+                    <div class="flex_row pt-2 pb-2">
+                        <div class="display-4" id="fila-numero-0">--</div>
+                        <div class="flex_column">
+                            <p class="box-text">ESPERA</p>
+                            <div class="time" id="fila-espera-0">--:--:--</div>
+                        </div>
+                    </div>
                     <div class="status">Não Urgente</div>
                 </div>
-                <div class="queue-box" id="fila-1" style="border-color: #28a745; color: #28a745;">
-                    <div class="display-4" id="fila-numero-1">--</div>
-                    <div class="time" id="fila-espera-1">Espera --:--:--</div>
-                    <div class="status" style="background-color: #28a745;">Pouca Urgência</div>
+                <div class="queue-box box-green" id="fila-1">
+                    <div class="flex_row pt-2 pb-2">
+                        <div class="display-4" id="fila-numero-1">--</div>
+                        <div class="flex_column">
+                            <p class="box-text">ESPERA</p>
+                            <div class="time" id="fila-espera-1">--:--:--</div>
+                        </div>
+                    </div>
+
+                    <div class="status">Pouca Urgência</div>
                 </div>
-                <div class="queue-box" id="fila-2" style="border-color: #ffc107; color: #ffc107;">
-                    <div class="display-4" id="fila-numero-2">--</div>
-                    <div class="time" id="fila-espera-2">Espera --:--:--</div>
-                    <div class="status" style="background-color: #ffc107;">Urgente</div>
+                <div class="queue-box box-yellow" id="fila-2">
+                    <div class="flex_row pt-2 pb-2">
+                        <div class="display-4" id="fila-numero-2">--</div>
+                        <div class="flex_column">
+                            <p class="box-text">ESPERA</p>
+                            <div class="time" id="fila-espera-2">--:--:--</div>
+                        </div>
+                    </div>
+                    <div class="status">Urgente</div>
                 </div>
-                <div class="queue-box" id="fila-3" style="border-color: #fd7a00; color: #ff7f07;">
-                    <div class="display-4" id="fila-numero-3">--</div>
-                    <div class="time" id="fila-espera-3">Espera --:--:--</div>
-                    <div class="status" style="background-color: #ff7707b4;">Muito Urgente</div>
+                <div class="queue-box box-orange" id="fila-3" >
+                    <div class="flex_row pt-2 pb-2">
+                        <div class="display-4" id="fila-numero-3">--</div>
+                        <div class="flex_column">
+                            <p class="box-text">ESPERA</p>
+                            <div class="time" id="fila-espera-3">--:--:--</div>
+                        </div>
+                    </div>
+                    <div class="status">Muito Urgente</div>
                 </div>
-                <div class="queue-box" id="fila-4" style="border-color: #dc3545; color: #dc3545;">
-                    <div class="display-4" id="fila-numero-4">--</div>
-                    <div class="time" id="fila-espera-4">Espera --:--:--</div>
-                    <div class="status" style="background-color: #dc3545;">Emergência</div>
+                <div class="queue-box box-red" id="fila-4" >
+                    <div class="flex_row pt-2 pb-2">
+                        <div class="display-4" id="fila-numero-4">--</div>
+                        <div class="flex_column">
+                            <p class="box-text">ESPERA</p>
+                            <div class="time" id="fila-espera-4">--:--:--</div>
+                        </div>
+                    </div>
+                    <div class="status">Emergência</div>
                 </div>
 
             </div>

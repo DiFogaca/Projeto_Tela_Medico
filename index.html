@@ -10,15 +10,34 @@
 
 
     <!-- Estilos personalizados -->
+     <link rel="stylesheet" href="/css/themeLight.css" data-theme="theme">
     <link href="/css/menu.css" rel="stylesheet">
 
 </head>
 <body>
-
-    <div class="d-flex">
+    <header class="flex_row">
+        <a href="/" class="no_style_anchor flex_row">
+            <img src="/assets/images/clinica-logo.svg" alt="">
+            <h2>nome clinica</h2>
+        </a>
+        <div class="flex_row">
+            <div class="time" id="dataHoraAtual">
+                <h3 id="data_atual"></h3>
+                <h4 id="hora_atual"></h4>
+            </div>
+            <button onclick="toggleMenu()">
+                <img id="menuIcon" class="menu_icon" src="/assets/images/menu-icon.svg" alt="">
+            </button>
+            <button class="theme_button" onclick="toggleTheme()">
+                <img src="/assets/images/theme-icon.svg" alt="">
+                <img  id="theme_dark" src="/assets/images/theme-icon-dark.svg" alt="">
+            </button>
+        </div>
+    </header>
+    
+    <div>
         <!-- MENU LATERAL -->
-        <nav class="bg-dark text-white vh-100 p-3" style="width: 250px;">
-            <h4>Clínica Balala</h4>
+        <nav class="text-white p-3 flex_column">
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a href="/pages/dashboard.html" class="nav-link text-white">🏠 Dashboard</a>
@@ -33,19 +52,14 @@
                     <a href="#" class="nav-link text-white" onclick="carregarPagina('DashboardConsultaMedica','Dashboard Médico')">⚕ Médicos</a>
                 </li>
             </ul>
+            <a href="#" class="nav-link text-white">Sair</a>
         </nav>
 
         <!-- CONTEÚDO PRINCIPAL -->
-        <div class="flex-grow-1 p-4">
-            <header class="d-flex justify-content-between align-items-center bg-light p-3 rounded">
-                <h2 id="tituloPagina">Bem-vindo</h2>
-                <div id="dataHoraAtual">Carregando...</div>
-            </header>
-
-            <main id="conteudo" class="mt-3">
-                <h3>Selecione uma opção no menu</h3>
-            </main>
-        </div>
+        
+        <main id="conteudo">
+            <h3>Selecione uma opção no menu</h3>
+        </main>
     </div>
 
     <!-- Scripts -->
