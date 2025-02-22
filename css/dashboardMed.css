@@ -64,9 +64,9 @@ body {
     border-radius: 10px;
     text-align: center;
     width: 180px;
-    /*background: linear-gradient(to bottom, #ffffff, #007bff);*/
     color: #007bff;
     font-weight: bold;
+    margin: flex;
 }
 .queue-box .time {
     font-size: 1rem;
