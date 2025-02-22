@@ -37,22 +37,24 @@
     
     <div>
         <!-- MENU LATERAL -->
-        <nav class="text-white p-3 flex_column">
+        <nav class="text-white pt-3 pb-3 flex_column">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="/pages/dashboard.html" class="nav-link text-white">🏠 Dashboard</a>
+                    <a href="/pages/dashboard.html" >Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-white" onclick="carregarPagina('recepcao', 'Recepção')">👥 Recepção</a>
+                    <a href="#"  onclick="carregarPagina('recepcao', 'Recepção')">Recepção</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-white" onclick="carregarPagina('triagem', 'Triagem')">👥 Triagem</a>
+                    <a href="#"  onclick="carregarPagina('triagem/index', 'Triagem')">Triagem</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-white" onclick="carregarPagina('DashboardConsultaMedica','Dashboard Médico')">⚕ Médicos</a>
+                    <a href="#"  onclick="carregarPagina('DashboardConsultaMedica','Dashboard Médico')">Médicos</a>
                 </li>
             </ul>
-            <a href="#" class="nav-link text-white">Sair</a>
+            <div class="flex_row logout_option">
+                <a href="#" class="nav-link text-white">Sair</a>
+            </div>
         </nav>
 
         <!-- CONTEÚDO PRINCIPAL -->

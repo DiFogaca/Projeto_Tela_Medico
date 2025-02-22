@@ -76,7 +76,7 @@ textarea {
     background-color: var(--green);
     border: none;
     padding: 10px 20px; /* Padding interno */
-    font-size: 16px; /* Tamanho da fonte */
+    font-size: var(--default-text-smaller); /* Tamanho da fonte */
     border-radius: 4px; /* Bordas arredondadas */
     cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
     transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
