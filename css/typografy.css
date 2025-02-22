@@ -1,0 +1,14 @@
+:root {
+    --title:3.5rem;
+    --subtitle:3rem;
+    --heading-section:2.4rem;
+    --emphasys-text:2.1rem;
+    --default-text:1.8rem;
+    --default-text-small:1.5rem;
+    --default-text-smaller:1.2rem;
+    --default-text-micro:.9rem;
+    --bolder:800;
+    --bold:600;
+    --normal:500;
+    --thin:200;
+}

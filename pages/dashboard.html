@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/themeLight.css" data-theme="theme">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="no_style_anchor flex_row">
+                <img src="/assets/images/clinica-logo.svg" alt="">
+                <h2>nome clinica</h2>
+            </a>
+            <div class="flex_row">
+                <div class="time">
+                    <h3>22/12/2025</h3>
+                    <h4>12:30:00</h4>
+                </div>
+                <button onclick="toggleMenu()">
+                    <img id="menuIcon" class="menu_icon" src="/assets/images/menu-icon.svg" alt="">
+                </button>
+                <button class="theme_button" onclick="toggleTheme()">
+                    <img src="/assets/images/theme-icon.svg" alt="">
+                    <img  id="theme_dark" src="/assets/images/theme-icon-dark.svg" alt="">
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="flex_column">
+        <section id="chamadas" class="flex_row">
+            <div class="card_chamada">
+                <h2 class="title">CHAMANDO</h2>
+                <div  id="card_chamando"></div>
+            </div>
+            <div class="vertical_separator"></div>
+            <div id="ultimos_chamados">
+                <h2 class="title">ÚLTIMOS CHAMADOS</h2>
+                <div class="horozontal_scroll" id="ultimos_cards_chamados">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="filas" class="flex_row">
+            <div class="fila" id="nao_urgente">
+                <div class="fila_header">
+                    <div class="fila_header_title bg_blue_dark">
+                        <p>Não Urgente</p>
+                    </div>
+                    <div class="fila_header_info flex_row bg_blue">
+                        <div class="fila_pacientes">
+                            <p class="fila_text">Pacientes na fila</p>
+                            <p class="fila_number">03</p>
+                        </div>
+                        <div class="fila_tempo">
+                            <p class="fila_text">Tempo médio para atendimento</p>
+                            <p class="fila_number">00:40:02</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex_column fila_cards" id="nao_urgente_cards">
+                    
+                </div>
+            </div>
+            <div class="fila" id="pouco_urgente">
+                <div class="fila_header">
+                    <div class="fila_header_title bg_green_dark">
+                        <p>Pouco Urgente</p>
+                    </div>
+                    <div class="fila_header_info flex_row bg_green">
+                        <div class="fila_pacientes">
+                            <p class="fila_text">Pacientes na fila</p>
+                            <p class="fila_number">03</p>
+                        </div>
+                        <div class="fila_tempo">
+                            <p class="fila_text">Tempo médio para atendimento</p>
+                            <p class="fila_number">00:40:02</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex_column fila_cards" id="pouco_urgente_cards">
+                    
+                </div>
+            </div>
+            <div class="fila" id="urgente">
+                <div class="fila_header">
+                    <div class="fila_header_title bg_yellow_dark">
+                        <p>Urgente</p>
+                    </div>
+                    <div class="fila_header_info flex_row bg_yellow">
+                        <div class="fila_pacientes">
+                            <p class="fila_text">Pacientes na fila</p>
+                            <p class="fila_number">03</p>
+                        </div>
+                        <div class="fila_tempo">
+                            <p class="fila_text">Tempo médio para atendimento</p>
+                            <p class="fila_number">00:40:02</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex_column fila_cards" id="urgente_cards">
+                    
+                </div>
+            </div>
+            <div class="fila" id="muito_urgente">
+                <div class="fila_header">
+                    <div class="fila_header_title bg_orange_dark">
+                        <p>Muito Urgente</p>
+                    </div>
+                    <div class="fila_header_info flex_row bg_orange">
+                        <div class="fila_pacientes">
+                            <p class="fila_text">Pacientes na fila</p>
+                            <p class="fila_number">03</p>
+                        </div>
+                        <div class="fila_tempo">
+                            <p class="fila_text">Tempo médio para atendimento</p>
+                            <p class="fila_number">00:40:02</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex_column fila_cards" id="muito_urgente_cards">
+                    
+                </div>
+            </div>
+            <div class="fila" id="emergencia">
+                <div class="fila_header">
+                    <div class="fila_header_title bg_red_dark">
+                        <p>Emergência</p>
+                    </div>
+                    <div class="fila_header_info flex_row bg_red">
+                        <div class="fila_pacientes">
+                            <p class="fila_text">Pacientes na fila</p>
+                            <p class="fila_number">03</p>
+                        </div>
+                        <div class="fila_tempo">
+                            <p class="fila_text">Tempo médio para atendimento</p>
+                            <p class="fila_number">00:40:02</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex_column fila_cards" id="emergencia_cards">
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
