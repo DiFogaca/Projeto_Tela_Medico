@@ -9,12 +9,16 @@ body {
     background-color: #5f788a;
 }
 
-.container-fluid{
+.container-fluid, .container {
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 4px;
+    padding: 10px;
 }
+
+.container-fluid {
+    margin-top: 0px;
+}
+
 
 .status-box {
     padding: 15px;

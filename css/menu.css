@@ -11,10 +11,6 @@ body {
     background-color: #5f788a;
 }
 
-th {
-    text-align: -webkit-match-parent;
-}
-
 /* ===== MENU LATERAL ===== */
 nav {
     background-color: #1c1c1c; /* Fundo do menu */
@@ -68,8 +64,8 @@ nav ul li a:hover {
 
 /* ===== CABEÇALHO ===== */
 header {
-    background-color: #f8f9fa; /* Fundo cinza claro */
-    color: #000000; /* Texto preto */
+    background-color: #f8f9fa;
+    color: #112C37;
     padding: 15px 20px;
     border-radius: 10px;
     display: flex;
@@ -77,3 +73,17 @@ header {
     align-items: center;
 }
 
+#dataHoraAtual {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#tituloPagina {
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
