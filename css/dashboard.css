@@ -143,7 +143,10 @@ section {
         color: var(--text-color-contrast);
         margin: .4rem 0;
     }
-    &.card_chamada{
+    
+}
+.card_chamada {
+    & .card{
         width: 45rem;
     }
 }
@@ -151,12 +154,12 @@ section {
     display:flex;
     align-items: center;
     gap: .7rem;
-}
-#priority {
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 2rem;
-    display: inline-block;
+    & span {
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 2rem;
+        display: inline-block;
+    }
 }
 #ultimos_chamados{
     overflow: hidden;
@@ -268,7 +271,10 @@ section {
                     font-size: var(--heading-section);
                     font-weight: var(--bold);
                 }
-                &.card_chamada {
+                
+            }
+            & .card_chamada {
+                & .card{
                     width: 35rem;
                 }
             }
