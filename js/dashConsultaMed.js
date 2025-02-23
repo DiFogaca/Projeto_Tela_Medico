@@ -96,18 +96,12 @@ async function fetchData() {
       if (filaItem) {
         const filaNumero = document.getElementById(`fila-numero-${index}`);
         const filaEspera = document.getElementById(`fila-espera-${index}`);
-        const filaStatus = filaItem.querySelector(".status");
 
         const filaConfig = prioridadeConfig[paciente.prioridade.toLowerCase()] || prioridadeConfig["não urgente"];
 
         filaNumero.innerHTML = `<strong>${paciente.senha}</strong>`;
-        filaEspera.innerHTML = `<strong>Espera ${paciente.tempoEspera}</strong>`;
-        filaStatus.innerHTML = `<strong>${filaConfig.texto}</strong>`;
+        filaEspera.innerHTML = `<strong>${paciente.tempoEspera}</strong>`;
         
-        // Atualiza a cor da borda e do texto do item da fila
-        filaItem.style.borderColor = filaConfig.cor;
-        filaItem.style.color = filaConfig.cor;
-        filaStatus.style.backgroundColor = filaConfig.cor;
       }
     });
 
@@ -120,7 +114,9 @@ async function fetchData() {
 function irParaAtendimento() {
   carregarPagina("AtendimentoPaciente-Medico", "Atendimento Paciente");
 }
-
+function irParaAtendimentoTriagem() {
+  carregarPagina("/triagem/AtendPaciente");
+}
 
 // Variável para o intervalo
 

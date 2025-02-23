@@ -6,10 +6,7 @@
     font-family:'Inter', sans-serif
 }
 
-html{
-    font-size: 62.5%;
-    background-color: var(--primary);
-}
+
 
 img{
     display: block;

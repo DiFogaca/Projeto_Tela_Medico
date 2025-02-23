@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #5f788a;
+    background-color: var(--primary);
 }
 
 .container-fluid, .container {
@@ -48,7 +48,16 @@ body {
     padding: 20px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #000000;
+    gap: 2rem;
+    & h3{
+        font-size: 6rem;
+        margin: 0;
+        color: var(--text-color);
+    }
 }
 
 .info-container {
@@ -60,23 +69,56 @@ body {
 
 
 .queue-box {
-    border: 1px solid #007bff;
+    border: 1px solid var(--blue-contrast);
     border-radius: 10px;
     text-align: center;
-    width: 180px;
-    color: #007bff;
+    flex: 1;
+    color: var(--blue);
     font-weight: bold;
-    margin: flex;
-}
-.queue-box .time {
-    font-size: 1rem;
-    color: #666;
-}
-.queue-box .status {
-    background-color: #007bff;
-    color: white;
-    padding: 5px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin-top: 10px;
+    & p{
+        margin: 0;
+        &.box-text{
+            margin-bottom: -1.5rem;
+        }
+    }
+
+    & .status {
+        background: linear-gradient(to right, var(--blue), var(--blue-contrast)) ;
+        color: white;
+        padding: 5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    & .time {
+        font-size:var(--emphasys-text);
+        font-weight: var(--thin);
+    }
+    &.box-green {
+        border-color: var(--green-contrast);
+        color: var(--green);
+        & .status {
+            background: linear-gradient(to right, var(--green), var(--green-contrast)) ;
+        }
+    }
+    &.box-yellow {
+        border-color: var(--yellow-contrast);
+        color: var(--yellow);
+        & .status {
+            background: linear-gradient(to right, var(--yellow), var(--yellow-contrast)) ;
+        }
+    }
+    &.box-orange {
+        border-color: var(--orange-contrast);
+        color: var(--orange);
+        & .status {
+            background: linear-gradient(to right, var(--orange), var(--orange-contrast)) ;
+        }
+    }
+    &.box-red {
+        border-color: var(--red-contrast);
+        color: var(--red);
+        & .status {
+            background: linear-gradient(to right, var(--red), var(--red-contrast)) ;
+        }
+    }
 }
