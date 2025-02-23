@@ -42,6 +42,24 @@ mockRequisicoes = [
 mockPrescricoes = "Prescrição: Paracetamol 500mg a cada 6 horas.";
 mockDiagnostico = "Diagnóstico: Gripe comum.";
 
+function waitForElement(selector, intervalTime = 100, timeout = 5000) {
+    return new Promise((resolve) => {
+        if (document.querySelector(selector)) {
+            return resolve(true);
+        }
+
+        const startTime = Date.now();
+        const interval = setInterval(() => {
+            if (document.querySelector(selector)) {
+                clearInterval(interval);
+                resolve(true);
+            } else if (Date.now() - startTime > timeout) {
+                clearInterval(interval);
+                resolve(false);
+            }
+        }, intervalTime);
+    });
+}
 
 function preencherDadosPaciente() {
     // Preenchendo os dados do paciente
@@ -75,17 +93,21 @@ function preencherDadosProntuario() {
     document.getElementById('alergias').value = mockProntuario.alergias;
     document.getElementById('descricao-alergias').value = mockProntuario.descricaoAlergias;
     document.getElementById('sintomas').value = mockProntuario.sintomas;
-
-    // Preenchendo a requisição inicial
-    const requisicoesContainer = document.getElementById('requisicoes');
-    if (mockRequisicoes.length > 0) {
-        const requisicaoInicial = criarRequisicao(mockRequisicoes[0]); // Cria a requisição inicial
-        requisicoesContainer.appendChild(requisicaoInicial);
-    }
-
-    // Preenchendo prescrições e diagnóstico
-    document.getElementById('prescricoes').value = mockPrescricoes;
-    document.getElementById('diagnostico').value = mockDiagnostico;
+    
+    waitForElement('#requisicoes').then(isLoaded => {
+        if(isLoaded){
+            // Preenchendo a requisição inicial
+            const requisicoesContainer = document.getElementById('requisicoes');
+            if (mockRequisicoes.length > 0) {
+                const requisicaoInicial = criarRequisicao(mockRequisicoes[0]); // Cria a requisição inicial
+                requisicoesContainer.appendChild(requisicaoInicial);
+            }
+        
+            // Preenchendo prescrições e diagnóstico
+            document.getElementById('prescricoes').value = mockPrescricoes;
+            document.getElementById('diagnostico').value = mockDiagnostico;
+        }
+    })
 }
 //-------------------------
 
@@ -209,30 +231,33 @@ function criarRequisicao(descricao = '') {
     return novoGrupo;
 }
 
-// Função para adicionar nova requisição
-document.getElementById('adicionar-requisicao').addEventListener('click', function () {
-    const novaRequisicao = criarRequisicao(); // Cria uma nova requisição vazia
-    document.getElementById('requisicoes').appendChild(novaRequisicao); // Adiciona ao container
-});
-
-// Evento delegado para excluir requisições
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('excluir-requisicao')) {
-        // Remove o grupo de requisição ao qual o botão de exclusão pertence
-        event.target.closest('.requisicao-group').remove();
-    }
-});
-
-// Verifica se há uma requisição inicial e adiciona o evento de exclusão
-requisicaoInicial = document.querySelector('.requisicao-group');
-if (requisicaoInicial) {
-    const botaoExcluirInicial = requisicaoInicial.querySelector('.excluir-requisicao');
-    if (botaoExcluirInicial) {
-        botaoExcluirInicial.addEventListener('click', function () {
-            requisicaoInicial.remove(); // Remove a requisição inicial
+waitForElement('#adicionar-requisicao').then(isLoaded => {
+    if(isLoaded){
+        document.getElementById('adicionar-requisicao').addEventListener('click', function () {
+            const novaRequisicao = criarRequisicao(); // Cria uma nova requisição vazia
+            document.getElementById('requisicoes').appendChild(novaRequisicao); // Adiciona ao container
         });
+        // Evento delegado para excluir requisições
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('excluir-requisicao')) {
+                // Remove o grupo de requisição ao qual o botão de exclusão pertence
+                event.target.closest('.requisicao-group').remove();
+            }
+        });
+        
+        // Verifica se há uma requisição inicial e adiciona o evento de exclusão
+        requisicaoInicial = document.querySelector('.requisicao-group');
+        if (requisicaoInicial) {
+            const botaoExcluirInicial = requisicaoInicial.querySelector('.excluir-requisicao');
+            if (botaoExcluirInicial) {
+                botaoExcluirInicial.addEventListener('click', function () {
+                    requisicaoInicial.remove(); // Remove a requisição inicial
+                });
+            }
+        }
     }
-}
+})
+
 
 function inicializarAtendimentoPaciente() {
     console.log("Inicializando atendimentoPaciente.js...");

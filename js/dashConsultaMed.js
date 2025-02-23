@@ -114,7 +114,9 @@ async function fetchData() {
 function irParaAtendimento() {
   carregarPagina("AtendimentoPaciente-Medico", "Atendimento Paciente");
 }
-
+function irParaAtendimentoTriagem() {
+  carregarPagina("/triagem/AtendPaciente");
+}
 
 // Variável para o intervalo
 
