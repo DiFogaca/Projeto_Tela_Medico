@@ -292,7 +292,7 @@ document.getElementById("confirmarSalvarBtn").addEventListener("click", function
     modal.hide();
 
     // Redireciona para o dashboardMed
-    carregarPagina("DashboardConsultaMedica", "Dashboard Médico");
+    carregarPagina("medico/DashboardConsultaMedica", "Dashboard Médico");
 });
 
 // Função de salvar o atendimento (exemplo de lógica)

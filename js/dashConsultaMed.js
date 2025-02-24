@@ -112,7 +112,7 @@ async function fetchData() {
 
 
 function irParaAtendimento() {
-  carregarPagina("AtendimentoPaciente-Medico", "Atendimento Médico Paciente");
+  carregarPagina("medico/AtendimentoPaciente-Medico", "Atendimento Médico Paciente");
 }
 
 function irParaAtendimentoTriagem() {

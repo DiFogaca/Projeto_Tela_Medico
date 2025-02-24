@@ -2,18 +2,18 @@
 function atualizarDataHora() {
   const agora = new Date();
   const formatoData = {
-      day: '2-digit', 
-      month: '2-digit', 
-      year: 'numeric',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
   }
   const formatoTempo = {
-    hour: '2-digit', 
-    minute: '2-digit', 
+    hour: '2-digit',
+    minute: '2-digit',
     second: '2-digit'
   }
   const dataAtual = document.getElementById('data_atual')
   const horaAtual = document.getElementById('hora_atual')
-  
+
   dataAtual.textContent = agora.toLocaleDateString('pt-BR', formatoData)
   horaAtual.textContent = agora.toLocaleDateString('pt-BR', formatoTempo).split(',')[1]
 }
@@ -26,7 +26,7 @@ atualizarDataHora();
 function carregarPagina(pagina, titulo = "") {
   const conteudo = document.getElementById("conteudo");
 
-  if (!conteudo ) {
+  if (!conteudo) {
     console.error("Elementos principais não encontrados.");
     return;
   }
@@ -40,7 +40,7 @@ function carregarPagina(pagina, titulo = "") {
 
       if (typeof pararFetchData === "function") {
         pararFetchData();
-    }
+      }
       // Carrega o conteúdo da página
       conteudo.innerHTML = html;
 
@@ -84,3 +84,22 @@ function executarScriptsDinamicos(container) {
     document.body.appendChild(newScript);
   });
 }
+
+function logout(e) {
+  e.preventDefault();
+  localStorage.removeItem('username');
+  window.location.href = 'pages/login/login.html';
+}
+
+function validator() {
+  const isUserAuthenticated = !!localStorage.getItem('username');
+  if (!isUserAuthenticated){
+    window.location.href = 'pages/login/login.html';
+  }
+}
+
+window.onload = function () {
+  validator();
+};
+
+
