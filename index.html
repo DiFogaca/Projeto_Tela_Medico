@@ -41,7 +41,7 @@
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a href="/pages/dashboard.html" >Dashboard</a>
-                </li>
+                </li>                
                 <li class="nav-item">
                     <a href="#"  onclick="carregarPagina('recepcao', 'Recepção')">Recepção</a>
                 </li>
@@ -49,11 +49,11 @@
                     <a href="#"  onclick="carregarPagina('triagem/dashTriagem', 'Dashboard Triagem')">Triagem</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"  onclick="carregarPagina('DashboardConsultaMedica','Dashboard Médico')">Médicos</a>
+                    <a href="#"  onclick="carregarPagina('medico/DashboardConsultaMedica','Dashboard Médico')">Médicos</a>
                 </li>
             </ul>
             <div class="flex_row logout_option">
-                <a href="#" class="nav-link text-white">Sair</a>
+                <a href="#" onclick="logout(event)" class="nav-link text-white">Sair</a>
             </div>
         </nav>
 
@@ -71,6 +71,7 @@
 
     <!-- Scripts personalizados -->
     <script src="js/index.js"></script>
+    <script src="js/dashboard.js"></script>
     <script src="js/fiveserver.js"></script>
 </body>
 </html>
