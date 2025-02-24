@@ -46,8 +46,10 @@ document.getElementById('botaoEntrar').addEventListener('click', function(event)
     // }
     
     const usuarioLogado = findUser(username, password) 
-    console.log(username, password)  
-    console.log("Bora lá bichão",usuarioLogado)
+        if (usuarioLogado !== undefined){
+            localStorage.setItem('username', JSON.stringify(usuarioLogado))
+            window.location.href = '/index.html'
+        }  
 });
 
 
