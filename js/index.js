@@ -87,18 +87,66 @@ function executarScriptsDinamicos(container) {
 
 function logout(e) {
   e.preventDefault();
-  localStorage.removeItem('username');
+  localStorage.removeItem('usuarioLogado');
   window.location.href = 'pages/login/login.html';
 }
 
 function validator() {
-  const isUserAuthenticated = !!localStorage.getItem('username');
+  const isUserAuthenticated = !!localStorage.getItem('usuarioLogado');
   if (!isUserAuthenticated){
     window.location.href = 'pages/login/login.html';
   }
 }
 
+function exibirMenuCorreto() {
+  const usuarioLogado = localStorage.getItem('usuarioLogado');
+  if (!usuarioLogado) return;
+
+  const usuario = JSON.parse(usuarioLogado);
+  if (!usuario || !usuario.tipo) return;
+
+  const tipoUsuario = usuario.tipo;
+  const menuItens = document.querySelectorAll('.nav-item');
+
+  menuItens.forEach(item => {
+      const link = item.querySelector('a');
+      if (link) {
+          const page = link.getAttribute('data-page') || "";
+
+          // Ocultar o "Dashboard" para todos, exceto ADMIN
+          if (page === 'dashboard' && tipoUsuario !== 'ADMIN') {
+              item.style.display = 'none';
+              return;
+          }
+
+          switch (tipoUsuario) {
+              case 'ADMIN':
+                  break;
+              case 'MEDICO':
+                  if (page === 'triagem' || page === 'recepcao') {
+                      item.style.display = 'none';
+                  }
+                  break;
+              case 'ENFERMEIRO':
+                  if (page === 'medico' || page === 'recepcao') {
+                      item.style.display = 'none';
+                  }
+                  break;
+              case 'RECEPCAO':
+                  if (page === 'triagem' || page === 'medico') {
+                      item.style.display = 'none';
+                  }
+                  break;
+              default:
+                  break;
+          }
+      }
+  });
+}
+
+
 window.onload = function () {
+  exibirMenuCorreto();
   validator();
 };
 
