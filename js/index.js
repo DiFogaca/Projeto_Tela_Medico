@@ -2,20 +2,22 @@
 function atualizarDataHora() {
   const agora = new Date();
   const formatoData = {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  }
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  };
   const formatoTempo = {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  }
-  const dataAtual = document.getElementById('data_atual')
-  const horaAtual = document.getElementById('hora_atual')
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  };
+  const dataAtual = document.getElementById("data_atual");
+  const horaAtual = document.getElementById("hora_atual");
 
-  dataAtual.textContent = agora.toLocaleDateString('pt-BR', formatoData)
-  horaAtual.textContent = agora.toLocaleDateString('pt-BR', formatoTempo).split(',')[1]
+  dataAtual.textContent = agora.toLocaleDateString("pt-BR", formatoData);
+  horaAtual.textContent = agora
+    .toLocaleDateString("pt-BR", formatoTempo)
+    .split(",")[1];
 }
 
 // Atualiza a data e hora a cada segundo
@@ -33,11 +35,11 @@ function carregarPagina(pagina, titulo = "") {
 
   fetch(`./pages/${pagina}.html`)
     .then((response) => {
-      if (!response.ok) throw new Error(`Erro ${response.status}: Página não encontrada`);
+      if (!response.ok)
+        throw new Error(`Erro ${response.status}: Página não encontrada`);
       return response.text();
     })
     .then((html) => {
-
       if (typeof pararFetchData === "function") {
         pararFetchData();
       }
@@ -52,7 +54,9 @@ function carregarPagina(pagina, titulo = "") {
 
 function executarScriptsDinamicos(container) {
   container.querySelectorAll("script").forEach((oldScript) => {
-    let scriptExistente = document.querySelector(`script[src="${oldScript.src}"]`);
+    let scriptExistente = document.querySelector(
+      `script[src="${oldScript.src}"]`
+    );
     if (scriptExistente) {
       scriptExistente.remove();
     }
@@ -66,15 +70,19 @@ function executarScriptsDinamicos(container) {
 
         // Extrair o nome do arquivo e criar o nome da função dinamicamente
         const scriptName = oldScript.src.split("/").pop().split(".")[0]; // Exemplo: 'fiveserver.js' -> 'fiveserver'
-        const initFunctionName = `inicializar${scriptName.charAt(0).toUpperCase() + scriptName.slice(1)}`; // 'inicializarFiveserver'
+        const initFunctionName = `inicializar${
+          scriptName.charAt(0).toUpperCase() + scriptName.slice(1)
+        }`; // 'inicializarFiveserver'
 
         // Verificar se a função de inicialização existe e executá-la
         if (typeof window[initFunctionName] === "function") {
           setTimeout(() => {
-            window[initFunctionName]();  // Chama a função de inicialização correspondente
+            window[initFunctionName](); // Chama a função de inicialização correspondente
           }, 100);
         } else {
-          console.warn(`Função de inicialização ${initFunctionName} não encontrada.`);
+          console.warn(
+            `Função de inicialização ${initFunctionName} não encontrada.`
+          );
         }
       };
     } else {
@@ -87,67 +95,66 @@ function executarScriptsDinamicos(container) {
 
 function logout(e) {
   e.preventDefault();
-  localStorage.removeItem('usuarioLogado');
-  window.location.href = 'pages/login/login.html';
+  localStorage.removeItem("usuarioLogado");
+  window.location.href = "pages/login/login.html";
 }
 
 function validator() {
-  const isUserAuthenticated = !!localStorage.getItem('usuarioLogado');
-  if (!isUserAuthenticated){
-    window.location.href = 'pages/login/login.html';
+  const isUserAuthenticated = !!localStorage.getItem("usuarioLogado");
+  if (!isUserAuthenticated) {
+    window.location.href = "pages/login/login.html";
   }
 }
 
 function exibirMenuCorreto() {
-  const usuarioLogado = localStorage.getItem('usuarioLogado');
+  const usuarioLogado = localStorage.getItem("usuarioLogado");
   if (!usuarioLogado) return;
 
   const usuario = JSON.parse(usuarioLogado);
   if (!usuario || !usuario.tipo) return;
 
   const tipoUsuario = usuario.tipo;
-  const menuItens = document.querySelectorAll('.nav-item');
+  const menuItens = document.querySelectorAll(".nav-item");
 
-  menuItens.forEach(item => {
-      const link = item.querySelector('a');
-      if (link) {
-          const page = link.getAttribute('data-page') || "";
-
-          // Ocultar o "Dashboard" para todos, exceto ADMIN
-          if (page === 'dashboard' && tipoUsuario !== 'ADMIN') {
-              item.style.display = 'none';
-              return;
-          }
-
-          switch (tipoUsuario) {
-              case 'ADMIN':
-                  break;
-              case 'MEDICO':
-                  if (page === 'triagem' || page === 'recepcao') {
-                      item.style.display = 'none';
-                  }
-                  break;
-              case 'ENFERMEIRO':
-                  if (page === 'medico' || page === 'recepcao') {
-                      item.style.display = 'none';
-                  }
-                  break;
-              case 'RECEPCAO':
-                  if (page === 'triagem' || page === 'medico') {
-                      item.style.display = 'none';
-                  }
-                  break;
-              default:
-                  break;
-          }
+  menuItens.forEach((item) => {
+    if (item) {
+      const dataMenu = item.getAttribute("data-page");
+      if (dataMenu === "dashboard" && tipoUsuario === "ADMIN") {
+        item.classList.add("ativo");
+        return;
       }
+      let menuParaAtivar = "";
+      switch (tipoUsuario) {
+        case "ADMIN":
+          break;
+        case "MEDICO":
+          if (dataMenu === "medico") {
+            menuParaAtivar = "medico";
+          }
+          break;
+        case "ENFERMEIRO":
+          if (dataMenu === "triagem") {
+            menuParaAtivar = "triagem";
+          }
+          break;
+        case "RECEPCAO":
+          if (dataMenu === "recepcao") {
+            menuParaAtivar = "recepcao";
+          }
+          break;
+        default:
+          break;
+      }
+      if (!!menuParaAtivar) {
+        document
+          .querySelector(`li[data-page=${menuParaAtivar}]`)
+          .classList.add("ativo");
+      }
+    }
   });
 }
-
 
 window.onload = function () {
   exibirMenuCorreto();
   validator();
 };
-
-

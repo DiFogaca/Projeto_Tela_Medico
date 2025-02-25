@@ -37,19 +37,19 @@
     
     <div>
         <!-- MENU LATERAL -->
-        <nav class="text-white pt-3 pb-3 flex_column">
+        <nav class="text-white flex_column">
             <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a data-page="dashboard" href="/pages/dashboard.html" >Dashboard</a>
+                <li data-page="dashboard" class="nav-item">
+                    <a href="/pages/dashboard.html">Dashboard</a>
                 </li>                
-                <li class="nav-item">
-                    <a href="#"  data-page="recepcao" onclick="carregarPagina('recepcao', 'Recepção')">Recepção</a>
+                <li data-page="recepcao" class="nav-item">
+                    <a href="#" onclick="carregarPagina('recepcao', 'Recepção')">Recepção</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#"  data-page="triagem" onclick="carregarPagina('triagem/dashTriagem', 'Dashboard Triagem')">Triagem</a>
+                <li data-page="triagem" class="nav-item">
+                    <a href="#" onclick="carregarPagina('triagem/dashTriagem', 'Dashboard Triagem')">Triagem</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" data-page="medico" onclick="carregarPagina('medico/DashboardConsultaMedica','Dashboard Médico')">Médicos</a>
+                <li data-page="medico" class="nav-item">
+                    <a href="#" onclick="carregarPagina('medico/DashboardConsultaMedica','Dashboard Médico')">Médicos</a>
                 </li>
             </ul>
             <div class="flex_row logout_option">

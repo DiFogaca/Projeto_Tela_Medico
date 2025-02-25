@@ -66,6 +66,11 @@ nav {
     left: 0;
     & .logout_option{
         width: 100%;
+        padding:1rem 0;
+        transition: background-color .2s ease-in-out;
+        &:hover{
+            background-color: var(--text-color);
+        }
         & a{
             display: block;
             font-size: var(--default-text-small);
@@ -90,12 +95,23 @@ nav ul li a {
     font-size: var(--default-text-small);
     display: block;
     padding: 1rem;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
-    background: var(--text-color);
+    background-color: var(--text-color);
     color: #ffffff;
+}
+
+nav ul li {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+nav ul li.ativo {
+    visibility: visible;
+    opacity: 1;
+    display: block;
 }
 
 /* ===== CONTEÚDO PRINCIPAL ===== */
