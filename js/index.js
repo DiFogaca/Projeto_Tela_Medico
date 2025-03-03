@@ -119,36 +119,34 @@ function exibirMenuCorreto() {
   menuItens.forEach((item) => {
     if (item) {
       const dataMenu = item.getAttribute("data-page");
-      if (dataMenu === "dashboard" && tipoUsuario === "ADMIN") {
+      if (tipoUsuario === "ADMIN") {
         item.classList.add("ativo");
-        return;
-      }
-      let menuParaAtivar = "";
-      switch (tipoUsuario) {
-        case "ADMIN":
-          break;
-        case "MEDICO":
-          if (dataMenu === "medico") {
-            menuParaAtivar = "medico";
-          }
-          break;
-        case "ENFERMEIRO":
-          if (dataMenu === "triagem") {
-            menuParaAtivar = "triagem";
-          }
-          break;
-        case "RECEPCAO":
-          if (dataMenu === "recepcao") {
-            menuParaAtivar = "recepcao";
-          }
-          break;
-        default:
-          break;
-      }
-      if (!!menuParaAtivar) {
-        document
-          .querySelector(`li[data-page=${menuParaAtivar}]`)
-          .classList.add("ativo");
+      } else {
+        let menuParaAtivar = "";
+        switch (tipoUsuario) {
+          case "MEDICO":
+            if (dataMenu === "medico") {
+              menuParaAtivar = "medico";
+            }
+            break;
+          case "ENFERMEIRO":
+            if (dataMenu === "triagem") {
+              menuParaAtivar = "triagem";
+            }
+            break;
+          case "RECEPCAO":
+            if (dataMenu === "recepcao") {
+              menuParaAtivar = "recepcao";
+            }
+            break;
+          default:
+            break;
+        }
+        if (!!menuParaAtivar) {
+          document
+            .querySelector(`li[data-page=${menuParaAtivar}]`)
+            .classList.add("ativo");
+        }
       }
     }
   });
