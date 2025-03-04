@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    background-color: var(--primary);
+}
+.container{
+    background-color: var(--card-bg);
+    padding: 1rem;
+    font-size: var(--defaut-text);
+}
+
+.session-cadastro h4 {
+    background-color: #5a6268;
+    margin-bottom: 20px;
+    color: #fffefe;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+#dadosBusca.invisivel{
+    display: none;
+}
+
+section{
+    margin-top: 1rem;
+}
+
+#pesquisar{
+    background-color: var(--blue-contrast);
+    color: var(--text-color-white);
+}
+
+#btn-novo-cadastro, #btn-cadastrar{
+    background-color: var(--green-contrast);
+    color: var(--text-color-white);
+}
