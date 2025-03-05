@@ -249,8 +249,8 @@ waitForElement('#adicionar-requisicao').then(isLoaded => {
 })
 
 
-function inicializarAtendimentoPaciente() {
-    console.log("Inicializando atendimentoPaciente.js...");
+function inicializarAtendimentoTriagem() {
+    console.log("Inicializando atendimentoTriagem.js...");
 
     if (!document.getElementById("paciente-form")) {
         console.error("ERRO: Elementos do DOM ainda não carregaram.");
