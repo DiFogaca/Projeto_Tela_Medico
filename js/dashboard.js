@@ -241,65 +241,68 @@ function toggleTheme() {
     themeButton.classList.remove("active");
   }
 }
+const userLogged = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-function renderCards(destination, data) {
-  const destinationDiv = document.getElementById(destination);
+if (userLogged.usuario === "admin") {
+  function renderCards(destination, data) {
+    const destinationDiv = document.getElementById(destination);
 
-  // Remove apenas os cards antigos, sem apagar a classe do container
-  destinationDiv.innerHTML = destinationDiv.innerHTML
-    .split("\n")
-    .filter((line) => !line.includes('class="card"')) // Remove apenas os cards
-    .join("\n");
+    // Remove apenas os cards antigos, sem apagar a classe do container
+    destinationDiv.innerHTML = destinationDiv.innerHTML
+      .split("\n")
+      .filter((line) => !line.includes('class="card"')) // Remove apenas os cards
+      .join("\n");
 
-  data.forEach((item) => {
-    const card = document.createElement("div");
-    let urgencyName = "";
-    switch (item.urgencia) {
-      case 2:
-        urgencyName = "Pouco Urgente";
-        break;
-      case 3:
-        urgencyName = "Urgente";
-        break;
-      case 4:
-        urgencyName = "Muito Urgente";
-        break;
-      case 5:
-        urgencyName = "Emergência";
-        break;
-      default:
-        urgencyName = "Pouco Urgente";
-        break;
-    }
+    data.forEach((item) => {
+      const card = document.createElement("div");
+      let urgencyName = "";
+      switch (item.urgencia) {
+        case 2:
+          urgencyName = "Pouco Urgente";
+          break;
+        case 3:
+          urgencyName = "Urgente";
+          break;
+        case 4:
+          urgencyName = "Muito Urgente";
+          break;
+        case 5:
+          urgencyName = "Emergência";
+          break;
+        default:
+          urgencyName = "Pouco Urgente";
+          break;
+      }
 
-    card.classList.add("card");
-    card.innerHTML = `
-        <p class="${destination === "card_chamando" ? "title" : "subtitle"}">${
-      item.nome
-    }</p>
-    
-    ${item.doutor ? `<p>Doutor: ${item.doutor}</p>` : ""}
-    ${item.consultorio ? `<p>Consultório: ${item.consultorio}</p>` : ""}
-        
-        <p>Entrada: ${item.entrada}</p>
-        <p class="priority_line">Urgência: ${urgencyName} <span class="bg_${
-      item.urgencia
-    }_light"></span></p>
-        <p>Previsão: ${item.previsao_inicio} - ${item.previsao_limite}</p>
-      `;
+      card.classList.add("card");
+      card.innerHTML = `
+          <p class="${
+            destination === "card_chamando" ? "title" : "subtitle"
+          }">${item.nome}</p>
+      
+      ${item.doutor ? `<p>Doutor: ${item.doutor}</p>` : ""}
+      ${item.consultorio ? `<p>Consultório: ${item.consultorio}</p>` : ""}
+          
+          <p>Entrada: ${item.entrada}</p>
+          <p class="priority_line">Urgência: ${urgencyName} <span class="bg_${
+        item.urgencia
+      }_light"></span></p>
+          <p>Previsão: ${item.previsao_inicio} - ${item.previsao_limite}</p>
+        `;
 
-    destinationDiv.appendChild(card);
+      destinationDiv.appendChild(card);
+    });
+  }
+
+  function renderFilas() {
+    fila.map((colunaFila) => {
+      renderCards(colunaFila.id, colunaFila.cards);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderCards("ultimos_cards_chamados", chamados);
+    renderCards("card_chamando", chamando);
+    renderFilas();
   });
 }
-
-function renderFilas() {
-  fila.map((colunaFila) => {
-    renderCards(colunaFila.id, colunaFila.cards);
-  });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  renderCards("ultimos_cards_chamados", chamados);
-  renderCards("card_chamando", chamando);
-  renderFilas();
-});
