@@ -1,3 +1,4 @@
+@import url(/css/themeLight.css);
 *{
     margin: 0;
     padding: 0;
@@ -35,7 +36,38 @@ section{
     color: var(--text-color-white);
 }
 
-#btn-novo-cadastro, #btn-cadastrar{
+.btn{
     background-color: var(--green-contrast);
     color: var(--text-color-white);
+    &:hover {
+        background-color: var(--green);
+        color: #fff;
+        opacity: 1;
+    }
+}
+.btn-outline-primary {
+    background-color: transparent;
+    border: 1px solid var(--blue-contrast);
+    color: var(--blue-contrast);
+    &:hover {
+        background-color: var(--blue-contrast);
+        color: #fff;
+        opacity: 1;
+    }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input#nome,
+input#nomeMae,
+input#responsavel {
+    text-transform: capitalize;
 }

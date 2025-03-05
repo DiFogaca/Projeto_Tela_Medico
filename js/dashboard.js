@@ -270,7 +270,7 @@ if (userLogged.usuario === "admin") {
           urgencyName = "Emergência";
           break;
         default:
-          urgencyName = "Pouco Urgente";
+          urgencyName = "Não Urgente";
           break;
       }
 
