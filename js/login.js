@@ -5,8 +5,19 @@ const userType = [
     { usuario: "recepcionista", senha: "1234", tipo: "RECEPCAO" },
 ];
 
-// Espera o DOM carregar antes de adicionar o evento ao botão
+// Verifica se o usuário está logado ao carregar a página
 document.addEventListener("DOMContentLoaded", function () {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+
+    if (!usuarioLogado && !window.location.pathname.endsWith("login.html")) {
+        window.location.href = "login.html";
+        return;
+    }
+
+    if (window.location.pathname.endsWith("login.html")) {
+        localStorage.removeItem("usuarioLogado");
+    }
+
     const botaoEntrar = document.getElementById("botaoEntrar");
 
     if (botaoEntrar) {

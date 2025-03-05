@@ -263,7 +263,7 @@ function inicializarAtendimentoTriagem() {
 }
 
 // Se a página for carregada normalmente, a função será executada pelo evento DOMContentLoaded
-document.addEventListener("DOMContentLoaded", inicializarAtendimentoPaciente);
+document.addEventListener("DOMContentLoaded", inicializarAtendimentoTriag);
 
 // Função para abrir o modal de confirmação
 document.querySelector(".btn-salvar").addEventListener("click", function (event) {
