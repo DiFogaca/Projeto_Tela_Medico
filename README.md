@@ -33,7 +33,6 @@ css/
     themeDark.css
     themeLight.css
     typografy.css
-index.html
 js/
     atendimentoPaciente.js
     atendimentoTriagem.js
@@ -47,11 +46,17 @@ js/
 pages/
     dashboard.html
     login/
-        ...
+        login.html
     medico/
-        ...
+        DashboardConsultaMedica.html
+        AtendimentoPaciente-Medico.html
     recepcao/
+        index.html
+        cadastro.html
     triagem/
+        dashTriagem.html
+        atendPaciente.html
+index.html
 README.md
 ```
 
