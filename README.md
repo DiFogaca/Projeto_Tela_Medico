@@ -134,5 +134,4 @@ As imagens utilizadas no projeto estão localizadas na pasta images.
 [DIEGO DE LIMA FOGACA](https://github.com/DiFogaca)  
 [KLEVERTON MACHADO KULMANN](https://github.com/KlevertonMKulmann)  
 [LEILANE CATHERINE JOHN HIRT](https://github.com/leilanehirt)  
-[MANOELA DE ARAUJO CUNTIN HARRISON](https://github.com/Manoelah20)  
-[PETERSON FONSECA SIMIAO](https://github.com/PetersonFonsec)  
+[MANOELA DE ARAUJO CUNTIN HARRISON](https://github.com/Manoelah20)
