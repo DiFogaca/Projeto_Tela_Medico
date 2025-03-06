@@ -1,0 +1,11 @@
+{
+    "Requisicoes": [
+        {
+            "pacienteDocumento": "123.456.789-00",
+            "requisicoes": [
+                "Exame de sangue",
+                "Ultrasom"
+            ]
+        }
+    ]
+}

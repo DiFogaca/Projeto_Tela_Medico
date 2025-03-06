@@ -1,0 +1,16 @@
+{
+    "Prontuarios": [
+        {
+            "pacienteDocumento": "123.456.789-00",
+            "temperatura": "37.5°C",
+            "pressao": "120/80",
+            "oxigenacao": "98%",
+            "peso": "80kg",
+            "medicamentos": "Sim",
+            "descricaoMedicamentos": "Paracetamol 500mg - 1 comprimido a cada 6 horas",
+            "alergias": "Sim",
+            "descricaoAlergias": "Dipirona",
+            "sintomas": "Dor de cabeça, febre e mal-estar"
+        }
+    ]
+}

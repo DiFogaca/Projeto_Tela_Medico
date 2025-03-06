@@ -1,0 +1,12 @@
+{
+    "Diagnosticos": [
+        {
+            "pacienteDocumento": "123.456.789-00",
+            "diagnostico": [
+                "Gripe comum.",
+                "Febre",
+                "Dor de cabeça"
+            ]
+        }
+    ]
+}

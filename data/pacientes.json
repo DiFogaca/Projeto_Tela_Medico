@@ -1,0 +1,23 @@
+{
+    "Pacientes": [
+        {
+            "documento": "123.456.789-00",
+            "nome": "João Silva",
+            "urgencia": "Alta",
+            "naturalidade": "Rio de Janeiro",
+            "nacionalidade": "Brasileiro",
+            "responsavel": "Maria Silva",
+            "carteirinha": "9876543210",
+            "dataNascimento": "1985-07-20",
+            "sexo": "Masculino",
+            "cep": "20000-000",
+            "rua": "Rua das Flores",
+            "numero": "123",
+            "bairro": "Centro",
+            "cidade": "Rio de Janeiro",
+            "estado": "RJ",
+            "email": "joao.silva@gmail.com",
+            "telefone": "(21) 99999-8888"
+        }
+    ]
+}

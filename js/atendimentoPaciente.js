@@ -225,7 +225,7 @@ function inicializarAtendimentoPaciente() {
         console.error("ERRO: Elementos do DOM ainda não carregaram.");
         return;
     }
-
+    window.inicializarPopularEstados(mockPaciente.estado);
     preencherDadosPaciente();
     preencherDadosProntuario();
 }

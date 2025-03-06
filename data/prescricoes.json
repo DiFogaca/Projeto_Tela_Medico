@@ -1,0 +1,8 @@
+{
+    "Prescricoes": [
+        {
+            "pacienteDocumento": "123.456.789-00",
+            "prescricao": "Paracetamol 500mg a cada 6 horas."
+        }
+    ]
+}
