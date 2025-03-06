@@ -12,6 +12,7 @@
             <div class="container mt-5">
                 <h4 class="text-center">Dados do Paciente</h4>
                 <form id="paciente-form">
+                    <input type="hidden" id="paciente-id" value="123.456.789-00">
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="nome" class="form-label">Nome completo</label>
@@ -219,6 +220,8 @@
             </div>
         </div>
     </div>
+    <script src="/services/PreencherDadosPaciente.js"></script>
+    <script src="/services/PreencherProntuario.js"></script>
     <script src="/services/PopularEstados.js"></script>
     <script src="js/atendimentoPaciente.js"></script>
 
