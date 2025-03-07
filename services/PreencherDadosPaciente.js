@@ -6,7 +6,7 @@ function inicializarPreencherDadosPaciente(pacienteId) {
     })
     .then(data => {
       const paciente = data.Paciente.find(p => p.documento === pacienteId);
-
+      
       if (paciente) {
         document.getElementById('documento').value = paciente.documento;
         document.getElementById('nome').value = paciente.nome;
@@ -27,9 +27,7 @@ function inicializarPreencherDadosPaciente(pacienteId) {
         document.getElementById('telefone').value = paciente.telefone;
 
         return paciente; // Retorna os dados do paciente
-      } else {
-        throw new Error('Paciente não encontrado');
-      }
+      } 
     })
     .catch(error => {
       console.error('Erro ao carregar dados do paciente:', error);
