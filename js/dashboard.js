@@ -306,3 +306,6 @@ if (userLogged.usuario === "admin") {
     renderFilas();
   });
 }
+
+setInterval(atualizarDataHora, 1000);
+atualizarDataHora();

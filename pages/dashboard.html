@@ -12,12 +12,12 @@
         <nav>
             <a href="/" class="no_style_anchor flex_row">
                 <img src="/assets/images/clinica-logo.svg" alt="">
-                <h2>nome clinica</h2>
+                <h2>Clinica Balala</h2>
             </a>
             <div class="flex_row">
-                <div class="time">
-                    <h3>22/12/2025</h3>
-                    <h4>12:30:00</h4>
+                <div class="time" id="dataHoraAtual">
+                    <h3 id="data_atual">__/__/____</h3>
+                    <h4 id="hora_atual">--:--:--</h4>
                 </div>
                 <button onclick="toggleMenu()">
                     <img id="menuIcon" class="menu_icon" src="/assets/images/menu-icon.svg" alt="">
@@ -148,6 +148,7 @@
         </section>
 
     </main>
+    <script src="/services/timer.js"></script>
     <script src="/js/dashboard.js"></script>
 </body>
 </html>
