@@ -1,24 +1,24 @@
-function inicializarPreencherProntuario(pacienteId) {
-    const prontuarioPromise = fetch('/data/prontuarios.json')
+function inicializarPreencherProntuario(id) {
+    const prontuarioPromise = fetch('http://localhost:8000/api/v1/prontuarios/')
         .then(response => {
             return response.json();
         })
-        .then(data => data.Prontuario.find(p => p.pacienteDocumento === pacienteId));
+        .then(data => data.find(p => p.id === 1));
 
-    const prescricoesPromise = fetch('/data/prescricoes.json')
+    const prescricoesPromise = fetch('http://localhost:8000/api/v1/prontuarios/')
         .then(response => {
             return response.json()})
-        .then(data => data.Prescricoes.find(p => p.pacienteDocumento === pacienteId));
+        .then(data => data.find(p => p.id === 1));
 
-    const requisicoesPromise = fetch('/data/requisicoes.json')
+    const requisicoesPromise = fetch('http://localhost:8000/api/v1/requisicoes/')
         .then(response => {
             return response.json()})
-        .then(data => data.Requisicoes.find(r => r.pacienteDocumento === pacienteId));
+        .then(data => data.find(r => r.id === 1));
 
-    const diagnosticosPromise = fetch('/data/diagnosticos.json')
+    const diagnosticosPromise = fetch('http://localhost:8000/api/v1/diagnosticos/')
         .then(response => {
             return response.json()})
-        .then(data => data.Diagnosticos.find(d => d.pacienteDocumento === pacienteId));
+        .then(data => data.find(d => d.id === 1));
 
     return Promise.all([prontuarioPromise, prescricoesPromise, requisicoesPromise, diagnosticosPromise])
         .then(([prontuario, prescricoes, requisicoes, diagnostico]) => { 

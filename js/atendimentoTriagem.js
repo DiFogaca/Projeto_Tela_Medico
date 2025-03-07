@@ -148,12 +148,12 @@ function inicializarAtendimentoTriagem() {
         return;
     }
 
-    const pacienteId = document.getElementById('paciente-id').value;
+    const id = document.getElementById('paciente-id').value;
 
     // Carrega os dados do paciente e, em seguida, popula os estados
-    window.inicializarPreencherDadosPaciente(pacienteId).then(paciente => {
+    window.inicializarPreencherDadosPaciente(id).then(paciente => {
         window.inicializarPopularEstados(paciente.estado);
-        window.inicializarPreencherProntuario(pacienteId);
+        window.inicializarPreencherProntuario(id);
     });
 }
 
