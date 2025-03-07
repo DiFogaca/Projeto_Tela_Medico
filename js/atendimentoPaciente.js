@@ -1,4 +1,3 @@
-
 function waitForElement(selector, intervalTime = 100, timeout = 5000) {
     return new Promise((resolve) => {
         if (document.querySelector(selector)) {
@@ -61,12 +60,34 @@ document.getElementById('btn-editar').addEventListener('click', function () {
     // Evento para salvar os dados editados
     btnSalvar.addEventListener('click', function () {
         const campos = document.querySelectorAll('#paciente-form input, #paciente-form select, #paciente-form textarea');
+        const dadosPaciente = {};
         campos.forEach(campo => {
             campo.disabled = true; // Desabilita todos os campos após a edição
+            dadosPaciente[campo.name] = campo.value; // Coleta os dados dos campos
         });
         document.getElementById('btn-editar').style.display = 'inline-block'; // Exibe novamente o botão editar
         btnSalvar.remove(); // Remove o botão de salvar
-        alert('Dados salvos com sucesso!');
+
+        // Envia os dados do paciente via fetch POST
+        fetch('/api/salvarPaciente', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dadosPaciente)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Dados salvos com sucesso!');
+            } else {
+                alert('Erro ao salvar os dados.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao salvar os dados.');
+        });
     });
 });
 
