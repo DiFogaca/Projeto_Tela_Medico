@@ -1,16 +1,24 @@
-function inicializarPreencherDadosPaciente(pacienteId) {
-  return fetch('/data/pacientes.json')
+function inicializarPreencherDadosPaciente(id) {
+  return fetch('http://127.0.0.1:8000/api/v1/pacientes/')
     .then(response => {
       console.log("Arquivo JSON de pacientes foi carregado");
       return response.json();
     })
     .then(data => {
-      const paciente = data.Paciente.find(p => p.documento === pacienteId);
+
+
+
+      const paciente = data?.find(p => p.id === 1);
       
+      
+
       if (paciente) {
+
+        
+
         document.getElementById('documento').value = paciente.documento;
         document.getElementById('nome').value = paciente.nome;
-        document.getElementById('urgencia').value = paciente.urgencia;
+        document.getElementById('urgencia').value = paciente?.urgencia;
         document.getElementById('naturalidade').value = paciente.naturalidade;
         document.getElementById('nacionalidade').value = paciente.nacionalidade;
         document.getElementById('responsavel').value = paciente.responsavel;
