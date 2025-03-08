@@ -70,7 +70,7 @@ document.getElementById('btn-editar').addEventListener('click', function () {
 
         // Envia os dados do paciente via fetch POST
         fetch('/api/salvarPaciente', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
