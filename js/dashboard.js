@@ -228,6 +228,11 @@ const fila = [
   },
 ];
 
+function tocarSom() {
+  const audio = new Audio("../assets/bell-sound.mp3");
+  audio.play();
+}
+
 function toggleTheme() {
   const tagTema = document.querySelector('link[data-theme="theme"]');
   const menuIcon = document.getElementById("menuIcon");
@@ -357,7 +362,7 @@ function chamarPaciente() {
   const pacienteSelecionado = escolheProximoPaciente(
     fila[filaSelecionada - 1].cards
   );
-  console.log(pacienteSelecionado, fila[filaSelecionada - 1].cards);
+  tocarSom();
   limpaCards();
   updateChamadaPaciente(pacienteSelecionado);
   renderFilas();
@@ -369,6 +374,6 @@ document.addEventListener("DOMContentLoaded", function () {
   renderFilas();
 });
 
-setInterval(chamarPaciente, 5000);
+setInterval(chamarPaciente, 12000);
 setInterval(atualizarDataHora, 1000);
 atualizarDataHora();
