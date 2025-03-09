@@ -10,6 +10,7 @@ Este projeto é um sistema de gestão de pacientes para a Clínica Balala. Ele i
 * ➡️ [Estilos](#Estilos)
 * ➡️ [Como Executar](#Como-Executar)
 * ➡️ [Contribuidores](#Contribuidores)
+* ➡️ [Video do Projeto](#VideoProjeto)
 
 
 ## Estrutura-do-Projeto
@@ -135,3 +136,8 @@ As imagens utilizadas no projeto estão localizadas na pasta images.
 [KLEVERTON MACHADO KULMANN](https://github.com/KlevertonMKulmann)  
 [LEILANE CATHERINE JOHN HIRT](https://github.com/leilanehirt)  
 [MANOELA DE ARAUJO CUNTIN HARRISON](https://github.com/Manoelah20)
+
+## Vídeo do Projeto
+
+[Vídeo do Projeto](https://youtu.be/fSlR8F01qGU)
+
