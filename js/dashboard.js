@@ -228,8 +228,10 @@ const fila = [
   },
 ];
 
+const audio = new Audio("../assets/bell-sound.mp3");
+
 function tocarSom() {
-  const audio = new Audio("../assets/bell-sound.mp3");
+  audio.currentTime = 0;
   audio.play();
 }
 
@@ -374,6 +376,6 @@ document.addEventListener("DOMContentLoaded", function () {
   renderFilas();
 });
 
-setInterval(chamarPaciente, 12000);
+setInterval(chamarPaciente, 8000);
 setInterval(atualizarDataHora, 1000);
 atualizarDataHora();
