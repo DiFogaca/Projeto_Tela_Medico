@@ -1,49 +1,61 @@
-const chamados = [
+let chamados = [
   {
-    nome: "JOSÉ ANTÔNIO DA SILVA",
-    doutor: "Manoel Balala",
-    consultorio: 3,
+    nome: "CARLOS EDUARDO FERREIRA",
+    doutor: "Mariana Souza",
+    consultorio: 5,
     urgencia: 1,
-    entrada: "13:20 - 22/12/2024",
-    previsao_inicio: "13:00",
-    previsao_limite: "13:40",
+    entrada: "14:10 - 22/12/2024",
+    previsao_inicio: "14:15",
+    previsao_limite: "14:50",
   },
   {
-    nome: "JOSÉ ANTÔNIO DA SILVA",
-    doutor: "Manoel Balala",
-    consultorio: 2,
+    nome: "GABRIELA COSTA",
+    doutor: "Fernando Lopes",
+    consultorio: 7,
     urgencia: 2,
-    entrada: "13:20 - 22/12/2024",
-    previsao_inicio: "13:00",
-    previsao_limite: "13:40",
+    entrada: "14:25 - 22/12/2024",
+    previsao_inicio: "14:30",
+    previsao_limite: "15:00",
   },
   {
-    nome: "JOSÉ ANTÔNIO DA SILVA",
-    doutor: "Manoel Balala",
-    consultorio: 3,
+    nome: "RODRIGO ALMEIDA",
+    doutor: "Camila Ribeiro",
+    consultorio: 9,
     urgencia: 3,
-    entrada: "13:20 - 22/12/2024",
-    previsao_inicio: "13:00",
-    previsao_limite: "13:40",
+    entrada: "14:40 - 22/12/2024",
+    previsao_inicio: "14:45",
+    previsao_limite: "15:20",
   },
   {
-    nome: "JOSÉ ANTÔNIO DA SILVA",
-    doutor: "Manoela Balala",
-    consultorio: 22,
+    nome: "JÚLIA RIBEIRO",
+    doutor: "André Carvalho",
+    consultorio: 15,
     urgencia: 4,
-    entrada: "13:20 - 22/12/2024",
-    previsao_inicio: "13:00",
-    previsao_limite: "13:40",
+    entrada: "14:55 - 22/12/2024",
+    previsao_inicio: "15:00",
+    previsao_limite: "15:40",
   },
   {
-    nome: "JOSÉ ANTÔNIO DA SILVA",
-    doutor: "Manoel Balala",
-    consultorio: 12,
+    nome: "LUCAS MENEZES",
+    doutor: "Patrícia Mendes",
+    consultorio: 18,
     urgencia: 5,
-    entrada: "13:20 - 22/12/2024",
-    previsao_inicio: "13:00",
-    previsao_limite: "13:40",
+    entrada: "15:10 - 22/12/2024",
+    previsao_inicio: "15:15",
+    previsao_limite: "15:50",
   },
+  {
+    nome: "ANA CLARA SANTOS",
+    doutor: "Ricardo Borges",
+    consultorio: 2,
+    urgencia: 1,
+    entrada: "15:25 - 22/12/2024",
+    previsao_inicio: "15:30",
+    previsao_limite: "16:10",
+  },
+];
+
+let chamando = [
   {
     nome: "JOSÉ ANTÔNIO DA SILVA",
     doutor: "Manoel Balala",
@@ -54,34 +66,24 @@ const chamados = [
     previsao_limite: "13:40",
   },
 ];
-const chamando = [
-  {
-    nome: "JOSÉ ANTÔNIO DA SILVA",
-    doutor: "Manoel Balala",
-    consultorio: 1,
-    urgencia: 1,
-    entrada: "13:20 - 22/12/2024",
-    previsao_inicio: "13:00",
-    previsao_limite: "13:40",
-  },
-];
+
 const fila = [
   {
     id: "nao_urgente_cards",
     cards: [
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "CARLOS EDUARDO FERREIRA",
         urgencia: 1,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "14:05 - 22/12/2024",
+        previsao_inicio: "14:10",
+        previsao_limite: "14:50",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "MARIA HELENA SOUZA",
         urgencia: 1,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "14:15 - 22/12/2024",
+        previsao_inicio: "14:20",
+        previsao_limite: "15:00",
       },
     ],
   },
@@ -89,25 +91,25 @@ const fila = [
     id: "pouco_urgente_cards",
     cards: [
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "GABRIELA COSTA",
         urgencia: 2,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "14:30 - 22/12/2024",
+        previsao_inicio: "14:35",
+        previsao_limite: "15:10",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "RODRIGO ALMEIDA",
         urgencia: 2,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "14:45 - 22/12/2024",
+        previsao_inicio: "14:50",
+        previsao_limite: "15:30",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "LUCAS MENEZES",
         urgencia: 2,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "15:00 - 22/12/2024",
+        previsao_inicio: "15:05",
+        previsao_limite: "15:45",
       },
     ],
   },
@@ -115,39 +117,39 @@ const fila = [
     id: "urgente_cards",
     cards: [
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "ANA CLARA SANTOS",
         urgencia: 3,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "15:10 - 22/12/2024",
+        previsao_inicio: "15:15",
+        previsao_limite: "15:50",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "FERNANDO PEREIRA",
         urgencia: 3,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "15:20 - 22/12/2024",
+        previsao_inicio: "15:25",
+        previsao_limite: "16:00",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "JÚLIA RIBEIRO",
         urgencia: 3,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "15:30 - 22/12/2024",
+        previsao_inicio: "15:35",
+        previsao_limite: "16:10",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "ANDRÉ LIMA",
         urgencia: 3,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "15:40 - 22/12/2024",
+        previsao_inicio: "15:45",
+        previsao_limite: "16:20",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "RENATA MOREIRA",
         urgencia: 3,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "15:50 - 22/12/2024",
+        previsao_inicio: "15:55",
+        previsao_limite: "16:30",
       },
     ],
   },
@@ -155,60 +157,60 @@ const fila = [
     id: "muito_urgente_cards",
     cards: [
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "MARCOS TEIXEIRA",
         urgencia: 4,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "16:00 - 22/12/2024",
+        previsao_inicio: "16:05",
+        previsao_limite: "16:40",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "PATRÍCIA OLIVEIRA",
         urgencia: 4,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "16:10 - 22/12/2024",
+        previsao_inicio: "16:15",
+        previsao_limite: "16:50",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "RAFAEL SOARES",
         urgencia: 4,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "16:20 - 22/12/2024",
+        previsao_inicio: "16:25",
+        previsao_limite: "17:00",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "SILVIA MENDES",
         urgencia: 4,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "16:30 - 22/12/2024",
+        previsao_inicio: "16:35",
+        previsao_limite: "17:10",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "FÁBIO CARVALHO",
         urgencia: 4,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "16:40 - 22/12/2024",
+        previsao_inicio: "16:45",
+        previsao_limite: "17:20",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "TATIANA FREITAS",
         urgencia: 4,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "16:50 - 22/12/2024",
+        previsao_inicio: "16:55",
+        previsao_limite: "17:30",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "RICARDO BORGES",
         urgencia: 4,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "17:00 - 22/12/2024",
+        previsao_inicio: "17:05",
+        previsao_limite: "17:40",
       },
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "MONIQUE CASTRO",
         urgencia: 4,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "17:10 - 22/12/2024",
+        previsao_inicio: "17:15",
+        previsao_limite: "17:50",
       },
     ],
   },
@@ -216,11 +218,11 @@ const fila = [
     id: "emergencia_cards",
     cards: [
       {
-        nome: "JOSÉ ANTÔNIO DA SILVA",
+        nome: "JONAS VIEIRA",
         urgencia: 5,
-        entrada: "13:20 - 22/12/2024",
-        previsao_inicio: "13:00",
-        previsao_limite: "13:40",
+        entrada: "17:20 - 22/12/2024",
+        previsao_inicio: "17:25",
+        previsao_limite: "18:00",
       },
     ],
   },
@@ -246,66 +248,127 @@ const userLogged = JSON.parse(localStorage.getItem("usuarioLogado"));
 if (userLogged.usuario === "admin") {
   function renderCards(destination, data) {
     const destinationDiv = document.getElementById(destination);
-
-    // Remove apenas os cards antigos, sem apagar a classe do container
-    destinationDiv.innerHTML = destinationDiv.innerHTML
-      .split("\n")
-      .filter((line) => !line.includes('class="card"')) // Remove apenas os cards
-      .join("\n");
-
-    data.forEach((item) => {
-      const card = document.createElement("div");
-      let urgencyName = "";
-      switch (item.urgencia) {
-        case 2:
-          urgencyName = "Pouco Urgente";
-          break;
-        case 3:
-          urgencyName = "Urgente";
-          break;
-        case 4:
-          urgencyName = "Muito Urgente";
-          break;
-        case 5:
-          urgencyName = "Emergência";
-          break;
-        default:
-          urgencyName = "Não Urgente";
-          break;
-      }
-
-      card.classList.add("card");
-      card.innerHTML = `
-          <p class="${
-            destination === "card_chamando" ? "title" : "subtitle"
-          }">${item.nome}</p>
-      
-      ${item.doutor ? `<p>Doutor: ${item.doutor}</p>` : ""}
-      ${item.consultorio ? `<p>Consultório: ${item.consultorio}</p>` : ""}
-          
-          <p>Entrada: ${item.entrada}</p>
-          <p class="priority_line">Urgência: ${urgencyName} <span class="bg_${
-        item.urgencia
-      }_light"></span></p>
-          <p>Previsão: ${item.previsao_inicio} - ${item.previsao_limite}</p>
-        `;
-
-      destinationDiv.appendChild(card);
-    });
+    renderizarCards(destination, destinationDiv, data);
   }
+}
 
-  function renderFilas() {
-    fila.map((colunaFila) => {
-      renderCards(colunaFila.id, colunaFila.cards);
-    });
+function randomIntFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function escolheProximoPaciente(array) {
+  if (array.length === 0) {
+    console.log("O array está vazio.");
+    return null;
   }
+  return array.shift(); // Remove e retorna o primeiro item do array
+}
 
-  document.addEventListener("DOMContentLoaded", function () {
-    renderCards("ultimos_cards_chamados", chamados);
-    renderCards("card_chamando", chamando);
-    renderFilas();
+function encontrarFilaComItens(fila) {
+  let filaSelecionada;
+
+  do {
+    filaSelecionada = randomIntFromInterval(1, fila.length);
+  } while (fila[filaSelecionada - 1].cards.length < 1);
+
+  return filaSelecionada;
+}
+
+function renderFilas() {
+  fila.map((colunaFila) => {
+    renderCards(colunaFila.id, colunaFila.cards);
   });
 }
 
+function renderizarCards(destination, div, data) {
+  div.innerHTML = div.innerHTML
+    .split("\n")
+    .filter((line) => !line.includes('class="card"'))
+    .join("\n");
+
+  data.forEach((item) => {
+    const card = document.createElement("div");
+    let urgencyName = "";
+    switch (item.urgencia) {
+      case 2:
+        urgencyName = "Pouco Urgente";
+        break;
+      case 3:
+        urgencyName = "Urgente";
+        break;
+      case 4:
+        urgencyName = "Muito Urgente";
+        break;
+      case 5:
+        urgencyName = "Emergência";
+        break;
+      default:
+        urgencyName = "Não Urgente";
+        break;
+    }
+
+    card.classList.add("card");
+    card.innerHTML = `
+        <p class="${destination === "card_chamando" ? "title" : "subtitle"}">${
+      item.nome
+    }</p>
+    
+    ${item.doutor ? `<p>Doutor: ${item.doutor}</p>` : ""}
+    ${item.consultorio ? `<p>Consultório: ${item.consultorio}</p>` : ""}
+        
+        <p>Entrada: ${item.entrada}</p>
+        <p class="priority_line">Urgência: ${urgencyName} <span class="bg_${
+      item.urgencia
+    }_light"></span></p>
+      <p>Previsão: ${item.previsao_inicio} - ${item.previsao_limite}</p>
+    `;
+
+    div.appendChild(card);
+  });
+}
+
+function limpaCards() {
+  document.getElementById("nao_urgente_cards").innerHTML = "";
+  document.getElementById("pouco_urgente_cards").innerHTML = "";
+  document.getElementById("urgente_cards").innerHTML = "";
+  document.getElementById("muito_urgente_cards").innerHTML = "";
+  document.getElementById("emergencia_cards").innerHTML = "";
+  document.getElementById("card_chamando").innerHTML = "";
+  document.getElementById("ultimos_cards_chamados").innerHTML = "";
+}
+
+function chamandoPaciente(paciente) {
+  chamando = [paciente];
+  renderCards("card_chamando", chamando);
+}
+
+function historicoPacientesChamados() {
+  chamados.unshift(chamando[0]);
+  renderCards("ultimos_cards_chamados", chamados);
+}
+
+function updateChamadaPaciente(paciente) {
+  historicoPacientesChamados();
+  chamandoPaciente(paciente);
+}
+
+function chamarPaciente() {
+  let filaSelecionada = encontrarFilaComItens(fila);
+  const pacienteSelecionado = escolheProximoPaciente(
+    fila[filaSelecionada - 1].cards
+  );
+  console.log(pacienteSelecionado, fila[filaSelecionada - 1].cards);
+  limpaCards();
+  updateChamadaPaciente(pacienteSelecionado);
+  renderFilas();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  renderCards("ultimos_cards_chamados", chamados);
+  renderCards("card_chamando", chamando);
+  renderFilas();
+});
+
+setInterval(chamarPaciente, 5000);
 setInterval(atualizarDataHora, 1000);
 atualizarDataHora();
